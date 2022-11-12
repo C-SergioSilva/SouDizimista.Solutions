@@ -4,4 +4,9 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SouDizimista.Domain\SouDizimista.Domain.csproj" />
+    <ProjectReference Include="..\SouDizimista.Repository\SouDizimista.Repository.csproj" />
+  </ItemGroup>
+
 </Project>

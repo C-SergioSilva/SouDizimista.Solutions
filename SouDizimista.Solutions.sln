@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SouDizimista.WebApp", "SouDizimista.WebApp\SouDizimista.WebApp.csproj", "{C1D4D788-07F7-456B-A61C-3EF6E58AB073}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SouDizimista.WebApp", "SouDizimista.WebApp\SouDizimista.WebApp.csproj", "{C1D4D788-07F7-456B-A61C-3EF6E58AB073}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SouDizimista.Domain", "SouDizimista.Domain\SouDizimista.Domain.csproj", "{629EE31E-42E4-4A3B-8DA8-C0FE9DA1DB4B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SouDizimista.Repository", "SouDizimista.Repository\SouDizimista.Repository.csproj", "{769B0249-68A4-4FED-9CFD-C9FD7C4A8404}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SouDizimista.Services", "SouDizimista.Services\SouDizimista.Services.csproj", "{7E581AB4-5812-4A26-B869-1531C96A3BCF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{C1D4D788-07F7-456B-A61C-3EF6E58AB073}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1D4D788-07F7-456B-A61C-3EF6E58AB073}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1D4D788-07F7-456B-A61C-3EF6E58AB073}.Release|Any CPU.Build.0 = Release|Any CPU
+		{629EE31E-42E4-4A3B-8DA8-C0FE9DA1DB4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{629EE31E-42E4-4A3B-8DA8-C0FE9DA1DB4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{629EE31E-42E4-4A3B-8DA8-C0FE9DA1DB4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{629EE31E-42E4-4A3B-8DA8-C0FE9DA1DB4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{769B0249-68A4-4FED-9CFD-C9FD7C4A8404}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{769B0249-68A4-4FED-9CFD-C9FD7C4A8404}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{769B0249-68A4-4FED-9CFD-C9FD7C4A8404}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{769B0249-68A4-4FED-9CFD-C9FD7C4A8404}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E581AB4-5812-4A26-B869-1531C96A3BCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E581AB4-5812-4A26-B869-1531C96A3BCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E581AB4-5812-4A26-B869-1531C96A3BCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E581AB4-5812-4A26-B869-1531C96A3BCF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
