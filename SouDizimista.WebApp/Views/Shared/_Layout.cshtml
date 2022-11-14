@@ -6,26 +6,41 @@
     <title>@ViewData["Title"] - Sou Dizimista</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/styles/main.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Sou Dizimista</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Paroquias</a>
+        <nav class="header-nav">
+            <div class="logo">
+                <a class="nav-menu text-dark" asp-area="" asp-controller="Home" asp-action="Index">Sou Dizimista</a>
+            </div>
+
+            <div class="menu-items">
+                <nav>
+                    <ul>
+                        <li>
+                             <a class="nav-link text-dark nav-menu" asp-area="" asp-controller="Home" asp-action="Index">Paroquias</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Admin</a>
+
+                        <li>
+                            <input class="inline input-search-menu" type="text" id="textBoxPesquisaParoquia" placeholder="Pesquise Sua Paróquia" />
+                        </li>
+
+                        <li>
+                           <a class="nav-link text-dark nav-menu" asp-area="" asp-controller="Home" asp-action="Privacy">Admin</a>
+                        </li>
+
+                         <li>
+                           <a class="nav-link text-dark nav-menu" asp-area="" asp-controller="Home" asp-action="Privacy">Contatos</a>
+                        </li>
+
+                         <li>
+                           <a class="nav-link text-dark nav-menu" asp-area="" asp-controller="Home" asp-action="Privacy">Configurações</a>
                         </li>
                     </ul>
-                </div>
+                </nav>
             </div>
         </nav>
     </header>
@@ -34,11 +49,8 @@
         <section class="sidebar">
 
             <ul class="sidebar-menu left-menu">
-                <li class="header"><i class="fa fa-ellipsis-v"></i>FUNCIONALIDADES</li>
-                <li class="header">
-                    <i class="fa fa-search"></i>
-                    <input class="inline input-search-menu" type="text" id="textBoxPesquisaFuncionalidade" placeholder="Pesquisar Menu" />
-                </li>            
+                <li class="header"><i class="fa fa-ellipsis-v"></i> Capelas </li>
+
             </ul>
 
         </section>
