@@ -1,14 +1,26 @@
-﻿*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+﻿
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
-header{
-      height:5rem;
-      background-color:aqua;
-      color:#039090;
-      font-weight:600;
-      text-transform:uppercase;
+
+.content-body{
+    display:flex;
+}
+
+.container-footer{
+    color:#039090;
+    font-weight:400;
+}
+header {
+    height: 5rem;
+    background-color: #0ebbbb;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
 .header-nav {
@@ -18,11 +30,37 @@ header{
     margin: auto;
     justify-content: center;
     align-items: center;
+
 }
 
-.logo a{
-    width:10rem;
+.hand{
+    cursor:pointer;
+}
+
+.logo {
+    display:flex;
+    width: 11rem;
+    text-decoration: none;
+    justify-content:center;
+    align-items:center;
+}
+
+.logo a:hover{
+    color:#039090;
     text-decoration:none;
+}
+
+.logo  a ion-icon:hover{
+    color:#039090;
+}
+
+.icon-menu-logo{
+    color:#fffdff;
+}
+
+.nav-menu-logo {
+    color: #ffffff;
+    margin-left: 1rem;
 }
 
 .menu-items {
@@ -40,23 +78,42 @@ header{
     display:flex;
 }
 
-.bg-aqua {
-    background-color: aqua;
+.paroquias{
+    display:block;
 }
 
-.input-search-menu {
-    width: 16rem !important;
-    text-align: left;
-    color: #0f8289 !important;
-    background: #FFF !important;
-    border: none;
-    margin-top: 09px;
+.search {
+    display: flex;
+}
 
+.browser-menu {
+    width: 18rem;
+    height: 2.1rem;
+    margin-top: 0.1rem;
+    border: 1px solid #ffffff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color:#039090;
+}
+
+.icon-menu {
+    position: relative;
+    font-size: 1.2rem;
+    z-index: 1;
+    border: 0;
+    background: transparent;
+    margin-left: -2rem;
+    margin-top: 0.5rem;
+    cursor: pointer;
 }
 
 .inline {
     display: inline;
     width: auto;
+}
+
+nav ul li a span:hover{
+    text-decoration:none
 }
 
 .nav-menu{
@@ -66,9 +123,109 @@ header{
     margin-left:1rem;
     margin-right:1rem;
     font-size:1rem;
-    color:#039090 !important;
+    color:#ffffff !important;
     font-weight:600;
 }
+ .nav-menu:hover{
+     color:#039090 !important;
+     list-style:none;
+     text-decoration:none;
+ }
+
+
+.navigation {
+    display: none;
+    position: relative;
+    height: 500px;
+    background-color: #0ebbbb;
+    width: 70px;
+    box-shadow: 10px 0 0 #039090;
+    border-left: 10px solid #039090;
+    border-top-left-radius: 10px;
+    overflow-x: hidden;
+    transition: 0.6s;
+    margin: 0.1rem;
+}
+.navigation:hover {
+    width: 300px;
+}
+
+.navigation ul{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    padding-left:05px;
+    padding-top:40px;
+ 
+}
+
+.navigation ul li{
+    position:relative;
+    list-style:none;
+    width:100%;
+    border-top-left-radius:20px;
+    border-bottom-left-radius:20px;
+}
+
+ .navigation ul li a{
+    position:relative;
+    display:flex; 
+    width:100%;
+    text-decoration:none;
+    color:#ffffff;
+}
+
+.navigation ul li a .icon{
+    position:relative;
+    display:block;
+    min-width:60px;
+    height:60px;
+    text-align:center;
+    line-height:70px;
+}
+
+.navigation ul li a .icon ion-icon{
+    position:relative;
+   font-size:1.5rem;
+   z-index:1;
+}
+
+.navigation ul li a .title{
+position:relative;
+display: block;
+padding-left: 10px;
+height:60px;
+line-height:60px;
+white-space: nowrap;
+}
+
+.navigation ul li.active{
+    background-color:#039090;
+}
+    .navigation ul li.active a::before {
+        content: '';
+        position: absolute;
+        top: -30px;
+        right: 0;
+        width: 30px;
+        height: 30px;
+        background-color: #0ebbbb;
+        border-radius: 50%;
+        box-shadow: 15px 15px 0 #039090;
+    }
+
+    .navigation ul li.active a::after {
+        content: '';
+        position: absolute;
+        bottom: -30px;
+        right: 0;
+        width: 30px;
+        height: 30px;
+        background-color: #0ebbbb;
+        border-radius: 50%;
+        box-shadow: 15px -15px 0 #039090;
+    }
 
 
 

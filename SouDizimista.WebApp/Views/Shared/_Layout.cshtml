@@ -14,44 +14,98 @@
     <header>
         <nav class="header-nav">
             <div class="logo">
-                <a class="nav-menu text-dark" asp-area="" asp-controller="Home" asp-action="Index">Sou Dizimista</a>
+                <a class="icon-menu-logo" asp-controller="" asp-action=""> <ion-icon class="icon-menu-logo" name="hand-right-outline"></ion-icon> Sou Dizimista</a>
             </div>
 
             <div class="menu-items">
                 <nav>
                     <ul>
                         <li>
-                             <a class="nav-link text-dark nav-menu" asp-area="" asp-controller="Home" asp-action="Index">Paroquias</a>
+                            <a id="paroquias-menu" class="nav-link nav-menu hand">Paróquias</a>
                         </li>
 
                         <li>
-                            <input class="inline input-search-menu" type="text" id="textBoxPesquisaParoquia" placeholder="Pesquise Sua Paróquia" />
+                            <a class="search" href="#">
+                                <input  class="browser-menu" />
+                                <span class="icon-menu"><ion-icon id="paroquias-menu" name="search-outline"></ion-icon></span>
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a class="nav-link  nav-menu" asp-area="" asp-controller="Home" asp-action="Privacy">Admin</a>
                         </li>
 
                         <li>
-                           <a class="nav-link text-dark nav-menu" asp-area="" asp-controller="Home" asp-action="Privacy">Admin</a>
+                            <a class="nav-link  nav-menu" asp-area="" asp-controller="Home" asp-action="Privacy">Contatos</a>
                         </li>
 
-                         <li>
-                           <a class="nav-link text-dark nav-menu" asp-area="" asp-controller="Home" asp-action="Privacy">Contatos</a>
-                        </li>
-
-                         <li>
-                           <a class="nav-link text-dark nav-menu" asp-area="" asp-controller="Home" asp-action="Privacy">Configurações</a>
+                        <li>
+                            <a class="nav-link nav-menu" asp-area="" asp-controller="Home" asp-action="Privacy">Configurações</a>
                         </li>
                     </ul>
                 </nav>
             </div>
         </nav>
     </header>
-
-    <aside class="main-sidebar">
+    <div class="content-body">
+            <aside>
         <section class="sidebar">
 
-            <ul class="sidebar-menu left-menu">
-                <li class="header"><i class="fa fa-ellipsis-v"></i> Capelas </li>
+            <div class="navigation">
+                <ul>
 
-            </ul>
+                    <li class="list active">
+                        <a href="#">
+                            <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                            <span class="title">Home</span>
+                        </a>
+                    </li>
+
+                    <li class="list">
+                        <a href="#">
+                            <span class="icon"><ion-icon name="body-outline"></ion-icon></span>
+                            <span class="title">Novo Dizimista</span>
+                        </a>
+                    </li>
+
+                    <li class="list">
+                        <a href="#">
+                            <span class="icon"><ion-icon name="create-outline"></ion-icon></span>
+                            <span class="title">Editar Dizimista</span>
+                        </a>
+                    </li>
+
+                    <li class="list">
+                        <a href="#">
+                            <span class="icon"><ion-icon name="trash-outline"></ion-icon></span>
+                            <span class="title">Excluir dizimista</span>
+                        </a>
+                    </li>
+
+                    <li class="list">
+                        <a href="#">
+                            <span class="icon"><ion-icon name="people-outline"></ion-icon></span>
+                            <span class="title">Nossos Dizimistas</span>
+                        </a>
+                    </li>
+
+                    
+                    <li class="list">
+                        <a href="#">
+                            <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+                            <span class="title">Configurações</span>
+                        </a>
+                    </li>
+
+                    <li class="list">
+                        <a href="#">
+                            <span class="icon"><ion-icon name="exit-outline"></ion-icon></span>
+                            <span class="title">Sair</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
 
         </section>
     </aside>
@@ -61,15 +115,22 @@
             @RenderBody()
         </main>
     </div>
+    </div>
+
 
     <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2022 - Gms-Solutions-Technology <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        <div class="container-footer">
+            &copy; 2022 - Gms-Solutions-Technology <a asp-area="" asp-controller="Home" asp-action="Privacy"></a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/manu_lateral.js"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg .com/ionicons@5.5.2/dist/ionicons/ionicons.js"> </script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
