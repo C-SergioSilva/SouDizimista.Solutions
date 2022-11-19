@@ -5,10 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Context\" />
-    <Folder Include="mapping\" />
-    <Folder Include="Migration\" />
-    <Folder Include="Repository\" />
+    <Folder Include="ContextDB\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,6 +20,10 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SouDizimista.Domain\SouDizimista.Domain.csproj" />
   </ItemGroup>
 
 </Project>
