@@ -22,7 +22,7 @@ namespace SouDizimista.Services.Services
         {
             try
             {
-                var entity = mapper.Map<Paroquia>(dto);
+                var entity = mapper.Map<Paroquia>(paroquia);
                 await repository.AddSave(entity);
             }
             catch (Exception exception)

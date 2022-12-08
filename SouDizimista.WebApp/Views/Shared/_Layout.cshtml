@@ -14,7 +14,7 @@
     <header>
         <nav class="header-nav">
             <div class="logo">
-                <a class="icon-menu-logo" asp-controller="" asp-action=""> <ion-icon class="icon-menu-logo" name="hand-right-outline"></ion-icon> Sou Dizimista</a>
+                <a class="icon-menu-logo" asp-controller="Home" asp-action="Index">Sou Dizimista</a>
             </div>
 
             <div class="menu-items">
@@ -56,21 +56,21 @@
                 <ul>
 
                     <li class="list active">
-                        <a href="#">
+                        <a asp-area="" asp-controller="Paroquia" asp-action="GetAllParoquia"> 
                             <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
                             <span class="title">Nova Paróquia</span>
                         </a>
                     </li>
 
                     <li class="list">
-                        <a href="#">
+                        <a asp-area="" asp-controller="Dizimista" asp-action="NewDizimista">
                             <span class="icon"><ion-icon name="body-outline"></ion-icon></span>
                             <span class="title">Novo Dizimista</span>
                         </a>
                     </li>                  
 
                     <li class="list">
-                        <a href="#">
+                        <a asp-area="" asp-controller="Dizimista" asp-action="GetAllDizimista">
                             <span class="icon"><ion-icon name="people-outline"></ion-icon></span>
                             <span class="title">Nossos Dizimistas</span>
                         </a>
@@ -78,14 +78,14 @@
 
                     
                     <li class="list">
-                        <a href="#">
+                        <a asp-area="" asp-controller="Home" asp-action="Privacy">
                             <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
                             <span class="title">Configurações</span>
                         </a>
                     </li>
 
                     <li class="list">
-                        <a href="#">
+                        <a asp-area="" asp-controller="Home" asp-action="Privacy">
                             <span class="icon"><ion-icon name="exit-outline"></ion-icon></span>
                             <span class="title">Sair</span>
                         </a>
