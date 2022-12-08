@@ -14,11 +14,11 @@ list.forEach((item) =>
 let menuList = document.querySelectorAll('#paroquias-menu');
 
 
-menuList.forEach((item) =>
-    item.addEventListener('click', showMenuLateral)    
-);
+//menuList.forEach((item) =>
+//    item.addEventListener('click', showMenuLateral)    
+//);
 
-function showMenuLateral() {
-    menuList.forEach((item) =>
-        document.querySelector('.navigation').style.display = 'block');
-}
+//function showMenuLateral() {
+//    menuList.forEach((item) =>
+//        document.querySelector('.navigation').style.display = 'block');
+//}

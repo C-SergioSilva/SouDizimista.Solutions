@@ -134,7 +134,7 @@ nav ul li a span:hover{
 
 
 .navigation {
-    display: none;
+    display: block;
     position: relative;
     height: 500px;
     background-color: #0ebbbb;
