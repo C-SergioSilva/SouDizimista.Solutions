@@ -33,7 +33,7 @@
 
 
                         <li>
-                            <a class="nav-link  nav-menu" asp-area="" asp-controller="Home" asp-action="Privacy"> Administração </a>
+                            <a class="nav-link  nav-menu" asp-area="" asp-controller="Dizimista" asp-action="NewDizimista"> Administração </a>
                         </li>
 
                         <li>
@@ -47,60 +47,62 @@
                 </nav>
             </div>
         </nav>
+
+         <aside>
+            <section class="sidebar">
+
+                <div class="navigation">
+                    <ul>
+
+                        <li class="list active">
+                            <a asp-area="" asp-controller="Paroquia" asp-action="GetAllParoquia">
+                                <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                                <span class="title">Nova Paróquia</span>
+                            </a>
+                        </li>
+
+                        <li class="list">
+                            <a asp-area="" asp-controller="Dizimista" asp-action="NewDizimista">
+                                <span class="icon"><ion-icon name="body-outline"></ion-icon></span>
+                                <span class="title">Novo Dizimista</span>
+                            </a>
+                        </li>
+
+                        <li class="list">
+                            <a asp-area="" asp-controller="Dizimista" asp-action="GetAllDizimista">
+                                <span class="icon"><ion-icon name="people-outline"></ion-icon></span>
+                                <span class="title">Nossos Dizimistas</span>
+                            </a>
+                        </li>
+
+
+                        <li class="list">
+                            <a asp-area="" asp-controller="Home" asp-action="Privacy">
+                                <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+                                <span class="title">Configurações</span>
+                            </a>
+                        </li>
+
+                        <li class="list">
+                            <a asp-area="" asp-controller="Home" asp-action="Privacy">
+                                <span class="icon"><ion-icon name="exit-outline"></ion-icon></span>
+                                <span class="title">Sair</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </section>
+        </aside>
     </header>
     <div class="content-body">
-            <aside>
-        <section class="sidebar">
+       
 
-            <div class="navigation">
-                <ul>
-
-                    <li class="list active">
-                        <a asp-area="" asp-controller="Paroquia" asp-action="GetAllParoquia"> 
-                            <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
-                            <span class="title">Nova Paróquia</span>
-                        </a>
-                    </li>
-
-                    <li class="list">
-                        <a asp-area="" asp-controller="Dizimista" asp-action="NewDizimista">
-                            <span class="icon"><ion-icon name="body-outline"></ion-icon></span>
-                            <span class="title">Novo Dizimista</span>
-                        </a>
-                    </li>                  
-
-                    <li class="list">
-                        <a asp-area="" asp-controller="Dizimista" asp-action="GetAllDizimista">
-                            <span class="icon"><ion-icon name="people-outline"></ion-icon></span>
-                            <span class="title">Nossos Dizimistas</span>
-                        </a>
-                    </li>
-
-                    
-                    <li class="list">
-                        <a asp-area="" asp-controller="Home" asp-action="Privacy">
-                            <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
-                            <span class="title">Configurações</span>
-                        </a>
-                    </li>
-
-                    <li class="list">
-                        <a asp-area="" asp-controller="Home" asp-action="Privacy">
-                            <span class="icon"><ion-icon name="exit-outline"></ion-icon></span>
-                            <span class="title">Sair</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-        </section>
-    </aside>
-
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+        <div class="container">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
     </div>
 
 

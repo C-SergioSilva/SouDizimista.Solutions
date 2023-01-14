@@ -31,7 +31,7 @@ namespace SouDizimista.WebApp
             services.AddControllersWithViews();
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddDbContext<Context>(options =>
-                   options.UseSqlServer(Configuration.GetConnectionString("BASE")));
+                   options.UseSqlServer(Configuration.GetConnectionString("BASE"))); 
 
             services.AddRazorPages().AddMicrosoftIdentityUI();
             services.AddScoped(typeof(IDizimistaRepository), typeof(DizimistaRepository));

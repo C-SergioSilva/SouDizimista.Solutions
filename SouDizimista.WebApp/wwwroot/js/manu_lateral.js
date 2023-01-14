@@ -1,15 +1,15 @@
 ﻿var list = document.querySelectorAll('.list');
 
-function ActiveLink() {
-    list.forEach((item) =>
-        item.classList.remove('active'));
-    this.classList.add('active');
+//function ActiveLink() {
+//    list.forEach((item) =>
+//        item.classList.remove('active'));
+//    this.classList.add('active');
 
-}
+//}
 
-list.forEach((item) =>
-    item.addEventListener('click', ActiveLink)
-);
+//list.forEach((item) =>
+//    item.addEventListener('click', ActiveLink)
+//);
 
 let menuList = document.querySelectorAll('#paroquias-menu');
 
