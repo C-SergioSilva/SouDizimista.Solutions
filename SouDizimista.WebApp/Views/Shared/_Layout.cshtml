@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="~/styles/main.css" />
+    <link rel="stylesheet" href="~/styles/main-content.css" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
 </head>
@@ -23,13 +24,13 @@
                         <li>
                             <a id="paroquias-menu" class="nav-link nav-menu hand">Paróquias</a>
                         </li>
-
+@*
                         <li>
                             <a class="search" href="#">
                                 <input class="browser-menu" />
                                 <span class="icon-menu"><ion-icon id="paroquias-menu" name="search-outline"></ion-icon></span>
                             </a>
-                        </li>
+                        </li>*@
 
 
                         <li>
@@ -96,10 +97,8 @@
         </aside>
     </header>
     <div class="content-body">
-       
-
         <div class="container">
-            <main role="main" class="pb-3">
+            <main role="main" class="content-main">
                 @RenderBody()
             </main>
         </div>
