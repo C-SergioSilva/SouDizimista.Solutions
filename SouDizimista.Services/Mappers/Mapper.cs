@@ -15,7 +15,6 @@ namespace SouDizimista.Services.Mappers
         {
             CreateMap<Paroquia, ParoquiaDTO>().ReverseMap();
             CreateMap<Dizimista, DizimistaDTO>().ReverseMap();
-            CreateMap<Endereco, EnderecoDTO>().ReverseMap();
         }
     }
 }

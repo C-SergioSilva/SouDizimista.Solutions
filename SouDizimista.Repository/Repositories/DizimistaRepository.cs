@@ -2,7 +2,7 @@
 using SouDizimista.Domain.Interfaces;
 using SouDizimista.Repository.ContextDB;
 
-namespace SouDizimista.Repository.Repository
+namespace SouDizimista.Repository.Repositories 
 {
     public class DizimistaRepository : RepositoryBase<Dizimista>, IDizimistaRepository
     {

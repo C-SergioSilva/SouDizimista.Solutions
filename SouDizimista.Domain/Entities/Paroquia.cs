@@ -9,7 +9,6 @@ namespace SouDizimista.Domain.Entities
         public string NomeParoco { get; set; }
         public string RazaoSocial { get; set; }
         public string NomeFantasia { get; set; }
-        public Endereco Endereco { get; set; }
-        public Guid IDEndereco { get; set; } 
+
     }
 }

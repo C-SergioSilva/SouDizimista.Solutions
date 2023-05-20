@@ -9,7 +9,7 @@
         <form asp-action="NewDizimista">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-            <h2> Adicionando Dizimista </h2>
+            <h2 class="text-dark font-weight-bold"> Novo Dizimista </h2>
             <hr />
             <div class="row">
                 <div class="col-md-6">
@@ -24,15 +24,85 @@
                 </div>
             </div>
 
-            <div class="form-group form-inline btnsubmitBack" >
-                <div>
-                   <input type="submit" value="Adicionar Dizimista" class="btn btn-primary" />
+            <div>
+
+                <div class="form-group row">
+
+                    <div class="col-12">
+                        <label>Cep</label>
+                        <input name="cep" class="form-control buscaCep btnaction readOnly" type="text" data-viacep="cep" data-receitaws="cep" id="cep" />
+                    </div>
+                    @*<div class="col-3">
+                    <button id="btnbuscarCep" type="button" class="btn btn-success btnHide" style="margin-top: 2em; margin-left: -1em;">Buscar</button>
+                    </div>*@
                 </div>
 
-                <div class="btnBack">
-                    <a class="btn btn-info" asp-action="Index">Voltar</a>
+                <div class="form-group row">
+
+                    <div class="col-5">
+
+                        <label>Logradouro</label>
+                        <input class="form-control readOnly" name="logradouro" type="text" data-viacep="logradouro" data-receitaws="logradouro" value="" id="logradouro" />
+
+                    </div>
+
+
+                    <div class="col-5">
+
+                        <label>Complemento</label>
+                        <input class="form-control btnaction readOnly" name="complemento" type="text" data-viacep="complemento" data-receitaws="complemento" value="" id="complemento" />
+
+                    </div>
+
+                    <div class="col-2">
+
+                        <label>Numero</label>
+                        <input class="form-control btnHide readOnly" type="text" data-viacep="numero" data-receitaws="numero" name="numero" id="numero" />
+
+                    </div>
                 </div>
+
+                <div class="form-group row">
+
+
+                    <div class="col-5">
+
+                        <label>Bairro</label>
+                        <input class="form-control btnaction readOnly" name="bairro" type="text" data-viacep="bairro" data-receitaws="bairro" id="bairro" />
+
+                    </div>
+
+                       <div class="col-5">
+
+                        <label>Municipio</label>
+                        <input class="form-control btnaction readOnly" name="municipio" type="text" data-viacep="localidade" data-receitaws="municipio" id="municipio" />
+
+                    </div>
+
+                    <div class="col-2">
+
+                        <label>Estado</label>
+                        <input class="form-control btnaction readOnly" name="estado" type="text" data-viacep="uf" data-receitaws="uf" id="estado" />
+
+                    </div>
+
+
+                 
+
+                </div>
+
+                <div class="form-group form-inline btnsubmitBack">
+                    <div>
+                        <input type="submit" value="Adicionar Dizimista" class="btn btn-primary" />
+                    </div>
+
+                    <div class="btnBack">
+                        <a class="btn btn-info" asp-action="Index">Voltar</a>
+                    </div>
+                </div>
+
             </div>
+
 
         </form>
     </div>

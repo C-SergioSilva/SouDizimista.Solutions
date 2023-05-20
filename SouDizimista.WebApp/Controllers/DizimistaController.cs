@@ -1,20 +1,31 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SouDizimista.Services.DTO;
+using SouDizimista.Services.Interfaces;
+using System;
+using System.Threading.Tasks;
 
 namespace SouDizimista.WebApp.Controllers
 {
     public class DizimistaController : Controller
     {
-        // GET: DizimistaController
-        public ActionResult GetAllDizimista()  
+        protected readonly IDizimistaServices services;
+        public DizimistaController(IDizimistaServices services)
         {
-            return View();
+           this.services = services;   
+        }
+        // GET: DizimistaController
+        public async Task<IActionResult> GetAllDizimista()  
+        {
+            var listDizimistas = await services.GetAll();
+            return View(listDizimistas); 
         }
 
         // GET: DizimistaController/Details/5
-        public ActionResult GetDizmista(int id) 
+        public async Task<IActionResult> GetDizmista(Guid id) 
         {
-            return View();
+            var dizimista = await services.GetById(id);
+            return View(dizimista);
         }
 
         // GET: DizimistaController/Create
@@ -26,10 +37,12 @@ namespace SouDizimista.WebApp.Controllers
         // POST: DizimistaController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult NewDizimista(IFormCollection collection)
+       
+        public async Task<IActionResult> NewDizimista(DizimistaDTO dizimista)
         {
             try
             {
+               await services.AddSave(dizimista);
                 return RedirectToAction(nameof(GetAllDizimista));
             }
             catch

@@ -8,7 +8,6 @@ namespace SouDizimista.Repository.ContextDB
     {
         public DbSet<Paroquia> Paroquias { get; set; }
         public DbSet<Dizimista> Dizimistas { get; set; }
-        public DbSet<Endereco> Enderecos { get; set; }
         public Context(DbContextOptions options) : base(options) { }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

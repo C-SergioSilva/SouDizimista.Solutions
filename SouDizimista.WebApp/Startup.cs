@@ -7,7 +7,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Identity.Web.UI;
 using SouDizimista.Domain.Interfaces;
 using SouDizimista.Repository.ContextDB;
-using SouDizimista.Repository.Repository;
+using SouDizimista.Repository.Repositories;
 using SouDizimista.Services.Interfaces;
 using SouDizimista.Services.Services;
 using System;
@@ -32,15 +32,16 @@ namespace SouDizimista.WebApp
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddDbContext<Context>(options =>
                    options.UseSqlServer(Configuration.GetConnectionString("BASE"))); 
-
+           
+            // Repositórios
             services.AddRazorPages().AddMicrosoftIdentityUI();
             services.AddScoped(typeof(IDizimistaRepository), typeof(DizimistaRepository));
             services.AddScoped(typeof(IParoquiaRepository), typeof(ParoquiaRepository));
-            services.AddScoped(typeof(IEnderecoRepository), typeof(EnderecoRepository));
-
+            
+            // Serviços
             services.AddScoped(typeof(IDizimistaServices), typeof(DizimistaServices));
-            services.AddScoped(typeof(IParoquiaRepository), typeof(ParoquiaRepository));
-            services.AddScoped(typeof(IEnderecoServices), typeof(EnderecoServices));
+            services.AddScoped(typeof(IParoquiaServices), typeof(ParoquiaServices));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

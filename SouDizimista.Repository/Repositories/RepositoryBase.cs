@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace SouDizimista.Repository.Repository
+namespace SouDizimista.Repository.Repositories 
 {
     public class RepositoryBase<T> : IRepositoryBase<T> where T : EntityGuid
     {
@@ -21,6 +21,10 @@ namespace SouDizimista.Repository.Repository
         {
             try
             {
+                if (item.Id == Guid.Empty)
+                {
+                    item.Id = Guid.NewGuid();
+                }
                 dbSet.Add(item);
             }
             catch (Exception ex)
@@ -35,6 +39,10 @@ namespace SouDizimista.Repository.Repository
         {
             try
             {
+                if (item.Id == Guid.Empty)
+                {
+                    item.Id = Guid.NewGuid();
+                }
                 dbSet.Add(item);
                 await context.SaveChangesAsync();
             }

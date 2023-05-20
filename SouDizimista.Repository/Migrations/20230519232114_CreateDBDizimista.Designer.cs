@@ -10,8 +10,8 @@ using SouDizimista.Repository.ContextDB;
 namespace SouDizimista.Repository.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20221119181124_MyFirstMigration")]
-    partial class MyFirstMigration
+    [Migration("20230519232114_CreateDBDizimista")]
+    partial class CreateDBDizimista
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -22,39 +22,6 @@ namespace SouDizimista.Repository.Migrations
                 .HasAnnotation("ProductVersion", "5.0.0");
 
             modelBuilder.Entity("SouDizimista.Domain.Entities.Dizimista", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("CreateAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("Deleted")
-                        .HasColumnType("bit");
-
-                    b.Property<Guid?>("EnderecoId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Nome")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid?>("ParoquiaId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<decimal>("ValorDevolucao")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("EnderecoId");
-
-                    b.HasIndex("ParoquiaId");
-
-                    b.ToTable("Dizimista");
-                });
-
-            modelBuilder.Entity("SouDizimista.Domain.Entities.Endereco", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -84,12 +51,18 @@ namespace SouDizimista.Repository.Migrations
                     b.Property<string>("Municipio")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Nome")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Numero")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<decimal>("ValorDevolucao")
+                        .HasColumnType("decimal(18,2)");
+
                     b.HasKey("Id");
 
-                    b.ToTable("Endereco");
+                    b.ToTable("Dizimista");
                 });
 
             modelBuilder.Entity("SouDizimista.Domain.Entities.Paroquia", b =>
@@ -107,9 +80,6 @@ namespace SouDizimista.Repository.Migrations
                     b.Property<bool>("Deleted")
                         .HasColumnType("bit");
 
-                    b.Property<Guid?>("EnderecoId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<string>("NomeFantasia")
                         .HasColumnType("nvarchar(max)");
 
@@ -121,33 +91,7 @@ namespace SouDizimista.Repository.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("EnderecoId");
-
                     b.ToTable("Paroquia");
-                });
-
-            modelBuilder.Entity("SouDizimista.Domain.Entities.Dizimista", b =>
-                {
-                    b.HasOne("SouDizimista.Domain.Entities.Endereco", "Endereco")
-                        .WithMany()
-                        .HasForeignKey("EnderecoId");
-
-                    b.HasOne("SouDizimista.Domain.Entities.Paroquia", "Paroquia")
-                        .WithMany()
-                        .HasForeignKey("ParoquiaId");
-
-                    b.Navigation("Endereco");
-
-                    b.Navigation("Paroquia");
-                });
-
-            modelBuilder.Entity("SouDizimista.Domain.Entities.Paroquia", b =>
-                {
-                    b.HasOne("SouDizimista.Domain.Entities.Endereco", "Endereco")
-                        .WithMany()
-                        .HasForeignKey("EnderecoId");
-
-                    b.Navigation("Endereco");
                 });
 #pragma warning restore 612, 618
         }
