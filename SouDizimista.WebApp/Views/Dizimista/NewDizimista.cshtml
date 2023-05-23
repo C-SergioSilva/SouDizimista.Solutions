@@ -6,7 +6,7 @@
 
 <div class="container">
     <div class="row">
-        <form asp-action="NewDizimista">
+        <form class="needs-validation" asp-action="NewDizimista">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
             <h2 class="text-dark font-weight-bold"> Novo Dizimista </h2>
@@ -30,7 +30,8 @@
 
                     <div class="col-12">
                         <label>Cep</label>
-                        <input name="cep" class="form-control buscaCep btnaction readOnly" type="text" data-viacep="cep" data-receitaws="cep" id="cep" />
+                        <input asp-for=Cep name="Cep" oninput="mascaraCep(this)" class="form-control buscaCep btnaction readOnly" type="text" data-viacep="Cep" data-receitaws="Cep" id="Cep" />
+                        <span asp-validation-for="Cep" class="text-danger"></span>
                     </div>
                     @*<div class="col-3">
                     <button id="btnbuscarCep" type="button" class="btn btn-success btnHide" style="margin-top: 2em; margin-left: -1em;">Buscar</button>
@@ -72,7 +73,7 @@
 
                     </div>
 
-                       <div class="col-5">
+                    <div class="col-5">
 
                         <label>Municipio</label>
                         <input class="form-control btnaction readOnly" name="municipio" type="text" data-viacep="localidade" data-receitaws="municipio" id="municipio" />
@@ -87,7 +88,7 @@
                     </div>
 
 
-                 
+
 
                 </div>
 
@@ -108,9 +109,10 @@
     </div>
 </div>
 
-
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
-    }
+ }
+
+

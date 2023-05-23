@@ -9,7 +9,5 @@ namespace SouDizimista.Services.DTO
         public string NomeParoco { get; set; }
         public string RazaoSocial { get; set; }
         public string NomeFantasia { get; set; }
-        public EnderecoDTO Endereco { get; set; }
-        public Guid IDEndereco { get; set; }
     }
 }

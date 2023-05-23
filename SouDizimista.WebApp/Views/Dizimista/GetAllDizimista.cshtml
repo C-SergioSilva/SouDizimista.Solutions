@@ -1,9 +1,41 @@
-﻿@{
-    ViewData["Title"] = "Nossos Dizimistas";
+﻿@model IEnumerable<SouDizimista.Services.DTO.DizimistaDTO>
+
+@{
+    ViewData["Title"] = "Nossos Dizímistas";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Nossos Dizimistas</h1>
-   
-</div>
+<h1 class="corFonte"">Nossos Dizímistas</h1>
 
+<table class="table">
+    <thead>
+        <tr>
+            <th class="corFonte">
+                @Html.DisplayName("Nome do Dizimsta")
+            </th>
+            <th class="corFonte">
+                @Html.DisplayName("Valor do Dizímo")
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ValorDevolucao)
+                </td>
+
+                <td>
+                    <a asp-action="Edit" class="btn btn-warning" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" class="btn btn-info" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

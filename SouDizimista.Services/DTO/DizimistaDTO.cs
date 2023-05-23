@@ -1,12 +1,21 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace SouDizimista.Services.DTO
 {
     public class DizimistaDTO
     {
+        public Guid? Id { get; set; }
 
+        [Required(ErrorMessage ="O Campo Nome é Obrigatório")]
         public string Nome { get; set; }
+
+        [Required(ErrorMessage = "O campo Número é obrigatório.")]
+        [RegularExpression(@"^\d+$", ErrorMessage = "Informe apenas números.")]
         public decimal ValorDevolucao { get; set; }
+
+        [Display(Name = "cep")]
+        [RegularExpression(@"^\d{5}-\d{3}$", ErrorMessage = "CEP inválido. Informe no formato 00000-000.")]
         public string Cep { get; set; }
         public string Logradouro { get; set; }
         public string Numero { get; set; }
