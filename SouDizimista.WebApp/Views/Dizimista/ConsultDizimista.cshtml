@@ -1,0 +1,70 @@
+﻿@model SouDizimista.Services.DTO.DizimistaDTO
+
+@{
+    ViewData["Title"] = "ConsultDizimista";
+}
+
+<h3 class="color-source-consult">Dizimista Sr(a) @Model.Nome</h3>
+
+
+<div class="card">
+    <div class="card-body">
+
+        <h5 class="card-title color-source-consult">Detalhes do Dizimista</h5>
+
+        <div class="row">
+            <div class="col-md-12">
+                <label class="color-source-consult" for="logradouro">Logradouro:</label>
+                <input type="text" id="logradouro" class="form-control color-source-consult" value="@Model.Logradouro" readonly />
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-6">
+                <label class="color-source-consult" for="cep">Cep:</label>
+                <input type="text" id="cep" class="form-control color-source-consult" value="@Model.Cep" readonly />
+            </div>
+
+            <div class="col-md-6">
+                <label class="color-source-consult" for="numero">Numero:</label>
+                <input type="text" id="numero" class="form-control color-source-consult" value="@Model.Numero" readonly />
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-6">
+                <label class="color-source-consult" for="complemento">Complemento:</label>
+                <input type="text" id="complemento" class="form-control color-source-consult" value="@Model.Complemento" readonly />
+            </div>
+
+            <div class="col-md-6">
+                <label class="color-source-consult" for="bairro">Bairro:</label>
+                <input type="text" id="bairro" class="form-control color-source-consult" value="@Model.Bairro" readonly />
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-6">
+                <label class="color-source-consult" for="municipio">Municipio:</label>
+                <input type="text" id="municipio" class="form-control color-source-consult" value="@Model.Municipio" readonly />
+            </div>
+
+            <div class="col-md-6">
+                <label class="color-source-consult" for="estado">Estado:</label>
+                <input type="text" id="estado" class="form-control color-source-consult" value="@Model.Estado" readonly />
+            </div>
+
+        </div>
+
+        <div style="margin-top:1rem;" class="btnBack text-right">
+            <a class="btn btn-warning" asp-action="Index">Voltar</a>
+        </div>
+
+    </div>
+</div>

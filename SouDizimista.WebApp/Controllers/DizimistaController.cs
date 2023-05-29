@@ -74,6 +74,21 @@ namespace SouDizimista.WebApp.Controllers
             }
         }
 
+        public async Task<IActionResult> ConsultDizimista(Guid id) 
+        {
+            try
+            {
+                var dizimista = await services.GetById(id);
+                return View(dizimista);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+             
+        }
+
         // GET: DizimistaController/Delete/5
         public ActionResult Delete(int id)
         {
