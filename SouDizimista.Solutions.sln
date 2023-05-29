@@ -5,11 +5,11 @@ VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SouDizimista.WebApp", "SouDizimista.WebApp\SouDizimista.WebApp.csproj", "{C1D4D788-07F7-456B-A61C-3EF6E58AB073}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SouDizimista.Domain", "SouDizimista.Domain\SouDizimista.Domain.csproj", "{629EE31E-42E4-4A3B-8DA8-C0FE9DA1DB4B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SouDizimista.Domain", "SouDizimista.Domain\SouDizimista.Domain.csproj", "{629EE31E-42E4-4A3B-8DA8-C0FE9DA1DB4B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SouDizimista.Repository", "SouDizimista.Repository\SouDizimista.Repository.csproj", "{769B0249-68A4-4FED-9CFD-C9FD7C4A8404}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SouDizimista.Repository", "SouDizimista.Repository\SouDizimista.Repository.csproj", "{769B0249-68A4-4FED-9CFD-C9FD7C4A8404}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SouDizimista.Services", "SouDizimista.Services\SouDizimista.Services.csproj", "{7E581AB4-5812-4A26-B869-1531C96A3BCF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SouDizimista.Services", "SouDizimista.Services\SouDizimista.Services.csproj", "{7E581AB4-5812-4A26-B869-1531C96A3BCF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

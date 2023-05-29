@@ -1,3 +1,21 @@
-﻿.corFonte {
-    color: #0ebbbb;
+﻿.color-source {
+    padding-left: 4.3rem;
+    color: #087575;
 }
+
+thead tr th{
+    padding-left:4.3rem;
+}
+
+tbody tr td {
+    padding-top:0.3rem;
+    padding-bottom:0.6rem;
+    padding-left: 4.3rem;
+}
+
+
+.text-source {
+    text-align: center;
+    color: #087575;
+}
+

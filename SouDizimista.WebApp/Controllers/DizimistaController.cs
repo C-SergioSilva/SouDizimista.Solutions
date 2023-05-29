@@ -52,19 +52,21 @@ namespace SouDizimista.WebApp.Controllers
         }
 
         // GET: DizimistaController/Edit/5
-        public ActionResult EditDizimista(int id)
+        public async Task<IActionResult> EditDizimista(Guid id)
         {
-            return View();
+            var dizimista = await services.GetById(id);
+            return View(dizimista);
         }
 
-        // POST: DizimistaController/Edit/5
+        // POST: DizimistaController/Edit/5 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public async Task<IActionResult> EditDizimista(DizimistaDTO dizimista)
         {
             try
             {
-                return RedirectToAction(nameof(GetAllDizimista));
+                var dizimistaAtualizado = await services.Update(dizimista); 
+                return View(dizimista);
             }
             catch
             {
