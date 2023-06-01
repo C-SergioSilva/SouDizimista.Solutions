@@ -54,8 +54,17 @@ namespace SouDizimista.WebApp.Controllers
         // GET: DizimistaController/Edit/5
         public async Task<IActionResult> EditDizimista(Guid id)
         {
-            var dizimista = await services.GetById(id);
-            return View(dizimista);
+            try
+            {
+                var dizimista = await services.GetById(id);
+                return View(dizimista);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+         
         }
 
         // POST: DizimistaController/Edit/5 
@@ -90,9 +99,19 @@ namespace SouDizimista.WebApp.Controllers
         }
 
         // GET: DizimistaController/Delete/5
-        public ActionResult Delete(int id)
+        public async Task<IActionResult> Delete(Guid id)
         {
-            return View();
+            try
+            {
+                var dizimista = await services.GetById(id);
+                return View(dizimista);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
         }
 
         // POST: DizimistaController/Delete/5
