@@ -1,0 +1,47 @@
+﻿@model IEnumerable<SouDizimista.Services.DTO.ParoquiaDTO>
+
+@{
+    ViewData["Title"] = "Paroquias";
+}
+
+<h3 class="color-source" ">Pároquias</h3>
+<hr>
+
+<table >
+    <thead>
+        <tr>
+            <th class="text-source">
+                @Html.DisplayName("Nome")
+            </th class="text-source">
+
+            <th class="text-source">
+                @Html.DisplayName("Pároco")
+            </th class="text-source">
+
+            <th class="text-source">
+                @Html.DisplayName("Opções")
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr >
+            <td class="text-source">
+                @Html.DisplayFor(modelItem => item.NomeFantasia)
+            </td>
+            <td class="text-source">
+                @Html.DisplayFor(modelItem => item.NomeParoco)
+            </td>
+
+            <td>
+                @Html.ActionLink("Alterar", "CreateParoquia", new { id = item.Id }, new { @class = "btn btn-info" })
+                @Html.ActionLink("Consultar", "DetailsParoquia", new { id = item.Id }, new {@class = "btn btn-secondary" })
+                @Html.ActionLink("Excluir", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

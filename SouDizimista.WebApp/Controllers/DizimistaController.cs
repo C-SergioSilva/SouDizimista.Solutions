@@ -133,10 +133,10 @@ namespace SouDizimista.WebApp.Controllers
                 var dizimista = await services.GetById(id);
                 return View(dizimista);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                throw new Exception(ex.Message);
             }
 
         }
