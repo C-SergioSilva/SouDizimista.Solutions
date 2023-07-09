@@ -67,14 +67,18 @@ namespace SouDizimista.Services.Services
             }
         }
 
-        public async Task MarkAsDeleted(Guid id)
+        public async Task MarkAsDeleted(Guid? id)
         {
 
             try
             {
-                var entityDizimista = await repository.GetById(id);
-                entityDizimista.Deleted = true;
-                await repository.MarkDeleted(entityDizimista);
+                if(id != null)
+                {
+                    var entityDizimista = await repository.GetById(id);
+                    entityDizimista.Deleted = true;
+                    await repository.MarkDeleted(entityDizimista);
+                }
+
             }
             catch (Exception exception)
             {

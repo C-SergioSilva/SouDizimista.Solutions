@@ -6,10 +6,10 @@
 
 <div class="container">
     <div class="row">
-        <form class="needs-validation" asp-action="NewDizimista">
+        <form class="needs-validation" asp-action="EditDizimista">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-            <h2 class="title-lable-dizimista"> Novo Dizimista </h2>
+            <h2 class="title-lable-dizimista"> Atualizar Dizimista </h2>
             <hr />
             <div class="row">
                 <div class="col-md-6">
@@ -87,18 +87,15 @@
 
                     </div>
 
-
-
-
                 </div>
 
                 <div class="form-group form-inline btnsubmitBack">
                     <div>
-                        <input type="submit" value="Adicionar Dizimista" class="btn btn-primary" />
+                        <input type="submit" value="Atualizar" class="btn btn-primary" />
                     </div>
 
                     <div class="btnBack">
-                        <a class="btn btn-info" asp-action="Index">Voltar</a>
+                        <a class="btn btn-info" asp-action="GetAllDizimista">Voltar</a>
                     </div>
                 </div>
 

@@ -10,7 +10,7 @@ namespace SouDizimista.Services.Interfaces
         Task AddSave(DizimistaDTO dto);
         Task<IEnumerable<DizimistaDTO>> GetAll();
         Task<DizimistaDTO> Update(DizimistaDTO dto);
-        Task MarkAsDeleted(Guid id);
+        Task MarkAsDeleted(Guid? id);
         Task<DizimistaDTO> GetById(Guid id);
     }
 }
