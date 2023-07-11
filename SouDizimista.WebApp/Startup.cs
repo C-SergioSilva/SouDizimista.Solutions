@@ -37,10 +37,12 @@ namespace SouDizimista.WebApp
             services.AddRazorPages().AddMicrosoftIdentityUI();
             services.AddScoped(typeof(IDizimistaRepository), typeof(DizimistaRepository));
             services.AddScoped(typeof(IParoquiaRepository), typeof(ParoquiaRepository));
-            
+            services.AddScoped(typeof(ICapelaRepository), typeof(CapelaRepository));
+
             // Serviços
             services.AddScoped(typeof(IDizimistaServices), typeof(DizimistaServices));
             services.AddScoped(typeof(IParoquiaServices), typeof(ParoquiaServices));
+            services.AddScoped(typeof(ICapelaServices), typeof(CapelaServices));
 
         }
 

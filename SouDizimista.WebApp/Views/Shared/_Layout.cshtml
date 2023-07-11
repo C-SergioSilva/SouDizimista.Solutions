@@ -23,7 +23,7 @@
                 <nav>
                     <ul>
                         <li>
-                            <a id="paroquias-menu" class="nav-link nav-menu hand">Paróquias</a>
+                            <a id="paroquias-menu" asp-controller="Paroquia" asp-action="GetAllParoquia" class="nav-link nav-menu hand">Paróquias</a>
                         </li>
 @*
                         <li>
@@ -32,7 +32,7 @@
                                 <span class="icon-menu"><ion-icon id="paroquias-menu" name="search-outline"></ion-icon></span>
                             </a>
                         </li>*@
-
+                        
 
                         <li>
                             <a class="nav-link  nav-menu" asp-area="" asp-controller="Dizimista" asp-action="NewDizimista"> Administração </a>
