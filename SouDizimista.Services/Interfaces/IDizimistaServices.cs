@@ -1,4 +1,4 @@
-﻿using SouDizimista.Services.DTO;
+﻿using SouDizimista.Services.ServicesEntity;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -7,10 +7,10 @@ namespace SouDizimista.Services.Interfaces
 {
     public interface IDizimistaServices
     {
-        Task AddSave(DizimistaDTO dto);
-        Task<IEnumerable<DizimistaDTO>> GetAll();
-        Task<DizimistaDTO> Update(DizimistaDTO dto);
+        Task AddSave(ServiceDizimista dto);
+        Task<IEnumerable<ServiceDizimista>> GetAll();
+        Task<ServiceDizimista> Update(ServiceDizimista dto);
         Task MarkAsDeleted(Guid? id);
-        Task<DizimistaDTO> GetById(Guid id);
+        Task<ServiceDizimista> GetById(Guid id);
     }
 }

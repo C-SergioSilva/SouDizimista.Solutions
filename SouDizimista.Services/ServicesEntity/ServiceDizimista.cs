@@ -1,9 +1,9 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace SouDizimista.Services.DTO
+namespace SouDizimista.Services.ServicesEntity
 {
-    public class DizimistaDTO
+    public class ServiceDizimista
     {
         public Guid? Id { get; set; }
 

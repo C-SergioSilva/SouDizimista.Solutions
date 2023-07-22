@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using SouDizimista.Services.DTO;
+using SouDizimista.Services.ServicesEntity;
 using SouDizimista.Services.Interfaces;
 using System;
 using System.Threading.Tasks;
@@ -75,7 +75,7 @@ namespace SouDizimista.WebApp.Controllers
         // POST: ParoquiaController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CreateParoquia(ParoquiaDTO paroquia)
+        public async Task<IActionResult> CreateParoquia(ServiceParoquia paroquia)
         {
             try
             { 
@@ -135,7 +135,7 @@ namespace SouDizimista.WebApp.Controllers
         // POST: ParoquiaController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Delete(ParoquiaDTO paroquia)
+        public async Task<IActionResult> Delete(ServiceParoquia paroquia)
         {
             try
             {

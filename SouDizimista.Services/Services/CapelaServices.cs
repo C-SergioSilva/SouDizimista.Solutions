@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using SouDizimista.Domain.Entities;
 using SouDizimista.Domain.Interfaces;
-using SouDizimista.Services.DTO;
+using SouDizimista.Services.ServicesEntity;
 using SouDizimista.Services.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -21,7 +21,7 @@ namespace SouDizimista.Services.Services
             this.mapper = mapper;
             this.repository = repository;
         }
-        public async Task AddSave(CapelaDTO capela)
+        public async Task AddSave(ServiceCapela capela)
         {
             try
             {
@@ -36,12 +36,12 @@ namespace SouDizimista.Services.Services
             }
         }
 
-        public async Task<IEnumerable<CapelaDTO>> GetAll()
+        public async Task<IEnumerable<ServiceCapela>> GetAll()
         {
             try
             {
                 var listCapelaEntitie = await repository.GetAll();
-                var listCapelas = mapper.Map<IEnumerable<CapelaDTO>>(listCapelaEntitie);
+                var listCapelas = mapper.Map<IEnumerable<ServiceCapela>>(listCapelaEntitie);
                 return listCapelas;
 
             }
@@ -52,12 +52,12 @@ namespace SouDizimista.Services.Services
             }
         }
 
-        public async Task<CapelaDTO> GetById(Guid id)
+        public async Task<ServiceCapela> GetById(Guid id)
         {
             try
             {
                 var capelaEntitie = await repository.GetById(id);
-                var capela = mapper.Map<CapelaDTO>(capelaEntitie);
+                var capela = mapper.Map<ServiceCapela>(capelaEntitie);
                 return capela;
             }
             catch (Exception  ex)
@@ -83,13 +83,13 @@ namespace SouDizimista.Services.Services
             }
         }
 
-        public async Task<CapelaDTO> Update(CapelaDTO capelaDto)
+        public async Task<ServiceCapela> Update(ServiceCapela capelaDto)
         {
             try
             {
                 var capelaEntitie = mapper.Map<Capela>(capelaDto);
                 var capelaUpdated = await repository.Update(capelaEntitie);
-                var capela = mapper.Map<CapelaDTO>(capelaUpdated);
+                var capela = mapper.Map<ServiceCapela>(capelaUpdated);
                 return capela;
             }
             catch (Exception ex)

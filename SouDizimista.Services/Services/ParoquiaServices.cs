@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using SouDizimista.Domain.Entities;
 using SouDizimista.Domain.Interfaces;
-using SouDizimista.Services.DTO;
+using SouDizimista.Services.ServicesEntity;
 using SouDizimista.Services.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -18,7 +18,7 @@ namespace SouDizimista.Services.Services
             this.repository = repository;
             this.mapper = mapper;   
         }
-        public async Task AddSave(ParoquiaDTO paroquia)
+        public async Task AddSave(ServiceParoquia paroquia)
         {
             try
             {
@@ -32,12 +32,12 @@ namespace SouDizimista.Services.Services
             }
             
         }
-        public async Task<IEnumerable<ParoquiaDTO>> GetAll()
+        public async Task<IEnumerable<ServiceParoquia>> GetAll()
         {
             try
             {
                 var listEntityParoquia = await repository.GetAll();
-                var listDtoParoquia = mapper.Map<IEnumerable<ParoquiaDTO>>(listEntityParoquia);
+                var listDtoParoquia = mapper.Map<IEnumerable<ServiceParoquia>>(listEntityParoquia);
                 return listDtoParoquia;
 
             }
@@ -47,12 +47,12 @@ namespace SouDizimista.Services.Services
                 throw new Exception(exception.Message, exception);
             }
         }
-        public async Task<ParoquiaDTO> GetById(Guid id)
+        public async Task<ServiceParoquia> GetById(Guid id)
         {
             try
             {
                 var entityParoquia = await repository.GetById(id);
-                var dtoParoquia = mapper.Map<ParoquiaDTO>(entityParoquia);
+                var dtoParoquia = mapper.Map<ServiceParoquia>(entityParoquia);
                 return dtoParoquia;
             }
             catch (Exception exception)
@@ -77,13 +77,13 @@ namespace SouDizimista.Services.Services
                 throw new Exception(exception.Message,exception);
             }
         }
-        public async Task<ParoquiaDTO> Update(ParoquiaDTO paroquia)
+        public async Task<ServiceParoquia> Update(ServiceParoquia paroquia)
         {
             try
             {
                 var entityParoquia = mapper.Map<Paroquia>(paroquia);
                 var paroquiaentity = await repository.Update(entityParoquia);
-                var dtoParoquia = mapper.Map<ParoquiaDTO>(paroquiaentity);
+                var dtoParoquia = mapper.Map<ServiceParoquia>(paroquiaentity);
                 return dtoParoquia;
             }
             catch (Exception exception)

@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using SouDizimista.Domain.Entities;
-using SouDizimista.Services.DTO;
+using SouDizimista.Services.ServicesEntity;
 
 namespace SouDizimista.Services.Mappers
 {
@@ -8,9 +8,10 @@ namespace SouDizimista.Services.Mappers
     {
         public Mapper()
         {
-            CreateMap<Paroquia, ParoquiaDTO>().ReverseMap();
-            CreateMap<Dizimista, DizimistaDTO>().ReverseMap();
-            CreateMap<Capela, CapelaDTO>().ReverseMap();
+            CreateMap<Paroquia, ServiceParoquia>().ReverseMap();
+            CreateMap<Dizimista, ServiceDizimista>().ReverseMap();
+            CreateMap<Capela, ServiceCapela>().ReverseMap();
+            CreateMap<Endereco, ServiceEndereco>().ReverseMap();
         }
     }
 }

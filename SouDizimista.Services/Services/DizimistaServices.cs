@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using SouDizimista.Domain.Entities;
 using SouDizimista.Domain.Interfaces;
-using SouDizimista.Services.DTO;
+using SouDizimista.Services.ServicesEntity;
 using SouDizimista.Services.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -12,20 +12,21 @@ namespace SouDizimista.Services.Services
     public class DizimistaServices : IDizimistaServices
     {
         protected readonly IMapper mapper;
-        protected readonly IDizimistaRepository repository;
+        protected readonly IDizimistaRepository dizimistaRepository;
+        //protected readonly IEnderecoRepository enderecoRepository;
 
         public DizimistaServices(IMapper mapper, IDizimistaRepository repository)
         {
             this.mapper = mapper;
-            this.repository = repository;
+            this.dizimistaRepository = repository;
         }
 
-        public async Task AddSave(DizimistaDTO dizimista)
+        public async Task AddSave(ServiceDizimista dizimista)
         {
             try
             {
                 var entityDizimista = mapper.Map<Dizimista>(dizimista);
-                await repository.AddSave(entityDizimista);
+                await dizimistaRepository.AddSave(entityDizimista);
             }
             catch (Exception exception)
             {
@@ -34,13 +35,13 @@ namespace SouDizimista.Services.Services
             }
         }
 
-        public async Task<IEnumerable<DizimistaDTO>> GetAll()
+        public async Task<IEnumerable<ServiceDizimista>> GetAll()
         {
 
             try
             {
-                var entityDizimista = await repository.GetAll();
-                var dtoDizimista = mapper.Map<IEnumerable<DizimistaDTO>>(entityDizimista);
+                var entityDizimista = await dizimistaRepository.GetAll();
+                var dtoDizimista = mapper.Map<IEnumerable<ServiceDizimista>>(entityDizimista);
                 return dtoDizimista;
                 
             }
@@ -51,13 +52,13 @@ namespace SouDizimista.Services.Services
             }
         }
 
-        public async Task<DizimistaDTO> GetById(Guid id)
+        public async Task<ServiceDizimista> GetById(Guid id)
         {
 
             try
             {
-                var entityDizimista = await repository.GetById(id);
-                var dtoDizimista = mapper.Map<DizimistaDTO>(entityDizimista);
+                var entityDizimista = await dizimistaRepository.GetById(id);
+                var dtoDizimista = mapper.Map<ServiceDizimista>(entityDizimista);
                 return dtoDizimista;
             }
             catch (Exception exception)
@@ -74,9 +75,9 @@ namespace SouDizimista.Services.Services
             {
                 if(id != null)
                 {
-                    var entityDizimista = await repository.GetById(id);
+                    var entityDizimista = await dizimistaRepository.GetById(id);
                     entityDizimista.Deleted = true;
-                    await repository.MarkDeleted(entityDizimista);
+                    await dizimistaRepository.MarkDeleted(entityDizimista);
                 }
 
             }
@@ -87,14 +88,14 @@ namespace SouDizimista.Services.Services
             }
         }
 
-        public async Task<DizimistaDTO> Update(DizimistaDTO dizimista)
+        public async Task<ServiceDizimista> Update(ServiceDizimista dizimista)
         {
 
             try
             {
                 var entityDizimista = mapper.Map<Dizimista>(dizimista);
-                var dtoDizimista =  await repository.Update(entityDizimista);
-                var dizimistaDto = mapper.Map<DizimistaDTO>(dtoDizimista);
+                var dtoDizimista =  await dizimistaRepository.Update(entityDizimista);
+                var dizimistaDto = mapper.Map<ServiceDizimista>(dtoDizimista);
                 return dizimista;
             }
             catch (Exception exception)

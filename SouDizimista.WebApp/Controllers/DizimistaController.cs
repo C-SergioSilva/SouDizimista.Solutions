@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using SouDizimista.Services.DTO;
+using SouDizimista.Services.ServicesEntity;
 using SouDizimista.Services.Interfaces;
 using System;
 using System.Threading.Tasks;
@@ -63,7 +63,7 @@ namespace SouDizimista.WebApp.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
        
-        public async Task<IActionResult> NewDizimista(DizimistaDTO dizimista)
+        public async Task<IActionResult> NewDizimista(ServiceDizimista dizimista)
         {
             try
             {
@@ -97,7 +97,7 @@ namespace SouDizimista.WebApp.Controllers
         // POST: DizimistaController/Edit/5 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> EditDizimista(DizimistaDTO dizimista)
+        public async Task<IActionResult> EditDizimista(ServiceDizimista dizimista)
         {
             try
             {
@@ -144,7 +144,7 @@ namespace SouDizimista.WebApp.Controllers
         // POST: DizimistaController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Delete(DizimistaDTO dizimista) 
+        public async Task<IActionResult> Delete(ServiceDizimista dizimista) 
         {
             try
             {

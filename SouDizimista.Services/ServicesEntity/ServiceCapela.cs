@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SouDizimista.Services.DTO
+namespace SouDizimista.Services.ServicesEntity
 {
-    public class CapelaDTO
+    public class ServiceCapela
     {
         public Guid Id { get; set; }
         public string Nome { get; set; }

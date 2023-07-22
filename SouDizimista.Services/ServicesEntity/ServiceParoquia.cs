@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace SouDizimista.Services.DTO
+namespace SouDizimista.Services.ServicesEntity
 {
-    public class ParoquiaDTO
+    public class ServiceParoquia
     {
         public Guid Id { get; set; }
         public string Cnpj { get; set; }

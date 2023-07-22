@@ -1,4 +1,4 @@
-﻿using SouDizimista.Services.DTO;
+﻿using SouDizimista.Services.ServicesEntity;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -7,10 +7,10 @@ namespace SouDizimista.Services.Interfaces
 {
     public interface IParoquiaServices
     { 
-        Task AddSave(ParoquiaDTO dto);
-        Task<IEnumerable<ParoquiaDTO>> GetAll();
-        Task<ParoquiaDTO> Update(ParoquiaDTO dto);
+        Task AddSave(ServiceParoquia dto);
+        Task<IEnumerable<ServiceParoquia>> GetAll();
+        Task<ServiceParoquia> Update(ServiceParoquia dto);
         Task MarkAsDeleted(Guid id);
-        Task<ParoquiaDTO> GetById(Guid id);
+        Task<ServiceParoquia> GetById(Guid id);
     }
 }
