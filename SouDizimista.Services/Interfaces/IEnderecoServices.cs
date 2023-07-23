@@ -9,7 +9,7 @@ namespace SouDizimista.Services.Interfaces
 {
     public interface IEnderecoServices
     {
-        Task AddSave(ServiceEndereco serviceEndereco); 
+        Task<ServiceEndereco> AddSaveEndereco(ServiceEndereco serviceEndereco); 
         Task<IEnumerable<ServiceEndereco>> GetAll();
         Task<ServiceEndereco> Update(ServiceEndereco serviceEndereco);
         Task MarkAsDeleted(Guid? id);

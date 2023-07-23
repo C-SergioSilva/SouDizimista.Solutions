@@ -7,6 +7,8 @@ namespace SouDizimista.Services.ServicesEntity
     {
         public Guid? Id { get; set; }
 
+        public Guid? EnderecoId { get; set; }
+
         [Required(ErrorMessage ="O Campo Nome é Obrigatório")]
         public string Nome { get; set; }
 

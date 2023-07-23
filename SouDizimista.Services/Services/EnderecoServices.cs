@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using SouDizimista.Domain;
+using SouDizimista.Domain.Entities;
 using SouDizimista.Domain.Interfaces;
 using SouDizimista.Services.Interfaces;
 using SouDizimista.Services.ServicesEntity;
@@ -21,13 +22,14 @@ namespace SouDizimista.Services.Services
             this.repository = repository;   
         }
 
-        public async Task AddSave(ServiceEndereco serviceEndereco)
-        {
+        public async Task<ServiceEndereco> AddSaveEndereco(ServiceEndereco serviceEndereco)
+        { 
             try
             {
                 var endereco = mapper.Map<Endereco>(serviceEndereco);
-                await repository.AddSave(endereco);
-
+                var servEndereco =  await repository.AddSaveEndereco(endereco);
+                var enderecoReturn = mapper.Map<ServiceEndereco>(servEndereco);
+                return enderecoReturn;
             }
             catch (Exception ex)
             {

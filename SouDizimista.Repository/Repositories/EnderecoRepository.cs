@@ -1,4 +1,5 @@
 ﻿using SouDizimista.Domain;
+using SouDizimista.Domain.Entities;
 using SouDizimista.Domain.Interfaces;
 using SouDizimista.Repository.ContextDB;
 

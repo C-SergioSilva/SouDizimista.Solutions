@@ -35,7 +35,7 @@ namespace SouDizimista.Repository.Repositories
 
         }
 
-        public async Task AddSave(T item)
+        public async Task<T> AddSaveEndereco(T item) 
         {
             try
             {
@@ -45,6 +45,25 @@ namespace SouDizimista.Repository.Repositories
                 }
                 dbSet.Add(item);
                 await context.SaveChangesAsync();
+                return item;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message, ex);
+            }
+
+        }
+        public async Task AddSave(T item)
+        {
+            try
+            {
+                if (item.Id == Guid.Empty)
+                {
+                    item.Id = Guid.NewGuid();
+                }
+                dbSet.Add(item);
+                await context.SaveChangesAsync();  
             }
             catch (Exception ex)
             {

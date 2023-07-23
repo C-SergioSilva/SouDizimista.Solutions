@@ -10,9 +10,11 @@ namespace SouDizimista.WebApp.Controllers
     public class DizimistaController : Controller
     {
         protected readonly IDizimistaServices services;
-        public DizimistaController(IDizimistaServices services)
+        protected readonly IEnderecoServices servicesEndereco; 
+        public DizimistaController(IDizimistaServices services, IEnderecoServices servicesEndereco)
         {
-           this.services = services;   
+           this.services = services;  
+           this.servicesEndereco = servicesEndereco;
         }
 
         public IActionResult Index()
@@ -67,7 +69,20 @@ namespace SouDizimista.WebApp.Controllers
         {
             try
             {
-               await services.AddSave(dizimista);
+                var endereco = new ServiceEndereco()
+                {
+                    Logradouro = dizimista.Logradouro,
+                    Cep = dizimista.Cep,  
+                    Complemento = dizimista.Complemento,    
+                    Bairro = dizimista.Bairro,
+                    Estado = dizimista.Estado,  
+                    Municipio = dizimista.Municipio,   
+                    Numero = dizimista.Numero  
+                };
+
+                var returnEndereco =  await servicesEndereco.AddSaveEndereco(endereco);
+                dizimista.EnderecoId = returnEndereco.Id;
+                await services.AddSave(dizimista);
                 return RedirectToAction(nameof(GetAllDizimista));
             }
             catch
