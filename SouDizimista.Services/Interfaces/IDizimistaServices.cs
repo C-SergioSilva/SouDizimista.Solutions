@@ -12,5 +12,6 @@ namespace SouDizimista.Services.Interfaces
         Task<ServiceDizimista> Update(ServiceDizimista dto);
         Task MarkAsDeleted(Guid? id);
         Task<ServiceDizimista> GetById(Guid id);
+        List<ServiceDizimista> ObterInformacoesDizimistasComEndereco(Guid id);
     }
 }

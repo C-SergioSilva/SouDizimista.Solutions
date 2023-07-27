@@ -104,5 +104,13 @@ namespace SouDizimista.Services.Services
                 throw new Exception(exception.Message, exception);
             }
         }
+
+        public List<ServiceDizimista> ObterInformacoesDizimistasComEndereco(Guid id)
+        {
+            var ListDizimistaEndereco = dizimistaRepository.ObterInformacoesDizimistasComEndereco(id);
+            var listDizimistaEnderecoServ = mapper.Map<List<ServiceDizimista>>(ListDizimistaEndereco);
+            return listDizimistaEnderecoServ;
+
+        }
     }
 }
