@@ -31,7 +31,7 @@
                     <div class="col-12">
                         <label class="title-lable-dizimista">Cep</label>
                         <input asp-for=Endereco.Cep name="Endereco.Cep" oninput="mascaraCep(this)" class="form-control buscaCep btnaction readOnly" type="text" data-viacep="Cep" data-receitaws="Cep" id="Cep" />
-                        <span asp-validation-for="Cep" class="text-danger"></span>
+                        <span asp-validation-for="Endereco.Cep" class="text-danger"></span>
                     </div>
                     @*<div class="col-3">
                     <button id="btnbuscarCep" type="button" class="btn btn-success btnHide" style="margin-top: 2em; margin-left: -1em;">Buscar</button>

@@ -69,19 +69,6 @@ namespace SouDizimista.WebApp.Controllers
         {
             try
             {
-                var endereco = new ServiceEndereco()
-                {
-                    Logradouro = dizimista.Logradouro,
-                    Cep = dizimista.Cep,  
-                    Complemento = dizimista.Complemento,    
-                    Bairro = dizimista.Bairro,
-                    Estado = dizimista.Estado,  
-                    Municipio = dizimista.Municipio,   
-                    Numero = dizimista.Numero  
-                };
-
-                var returnEndereco =  await servicesEndereco.AddSaveEndereco(endereco);
-                dizimista.EnderecoId = returnEndereco.Id;
                 await services.AddSave(dizimista);
                 return RedirectToAction(nameof(GetAllDizimista));
             }
