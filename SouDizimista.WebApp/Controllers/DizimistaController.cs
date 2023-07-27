@@ -92,13 +92,11 @@ namespace SouDizimista.WebApp.Controllers
         }
 
         // GET: DizimistaController/Edit/5
-        public ActionResult EditDizimista(Guid id)
+        public async Task<IActionResult> EditDizimista(Guid id)
         {
             try
             {
-                var dizimista =  services.ObterInformacoesDizimistasComEndereco(id);
-
-
+                var dizimista =  await services.GetById(id);
                 return View(dizimista);
             }
             catch (Exception)

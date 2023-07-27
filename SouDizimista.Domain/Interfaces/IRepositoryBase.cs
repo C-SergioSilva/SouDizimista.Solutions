@@ -17,5 +17,6 @@ namespace SouDizimista.Domain.Interfaces
         Task<bool> Delete(Guid Id);
         Task MarkDeleted(T item);
         Task Commit();
+        IQueryable<T> Queryable();
     }
 }

@@ -18,12 +18,8 @@ namespace SouDizimista.Services.ServicesEntity
 
         [Display(Name = "cep")]
         [RegularExpression(@"^\d{5}-\d{3}$", ErrorMessage = "CEP inválido. Informe no formato 00000-000.")]
-        public string Cep { get; set; }
-        public string Logradouro { get; set; }
-        public string Numero { get; set; }
-        public string Complemento { get; set; }
-        public string Bairro { get; set; }
-        public string Estado { get; set; }
-        public string Municipio { get; set; }
+
+        public ServiceEndereco Endereco { get; set; }
+
     }
 }

@@ -4,6 +4,7 @@ using SouDizimista.Domain.Interfaces;
 using SouDizimista.Repository.ContextDB;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace SouDizimista.Repository.Repositories 
@@ -164,6 +165,11 @@ namespace SouDizimista.Repository.Repositories
             }
 
             return item;
+        }
+
+        public IQueryable<T> Queryable()
+        {
+            return dbSet as IQueryable<T>;
         }
     }
 }

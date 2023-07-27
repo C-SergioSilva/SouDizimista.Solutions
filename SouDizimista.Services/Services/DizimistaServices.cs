@@ -6,6 +6,7 @@ using SouDizimista.Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace SouDizimista.Services.Services
 {
@@ -57,7 +58,7 @@ namespace SouDizimista.Services.Services
 
             try
             {
-                var entityDizimista = await dizimistaRepository.GetById(id);
+                var entityDizimista = await dizimistaRepository.Queryable().Include(d => d.Endereco).FirstOrDefaultAsync(w => w.Id.Equals(id));
                 var dtoDizimista = mapper.Map<ServiceDizimista>(entityDizimista);
                 return dtoDizimista;
             }
