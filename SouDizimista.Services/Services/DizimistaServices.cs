@@ -14,12 +14,13 @@ namespace SouDizimista.Services.Services
     {
         protected readonly IMapper mapper;
         protected readonly IDizimistaRepository dizimistaRepository;
-        //protected readonly IEnderecoRepository enderecoRepository;
+        protected readonly IEnderecoRepository enderecoRepository;
 
-        public DizimistaServices(IMapper mapper, IDizimistaRepository repository)
+        public DizimistaServices(IMapper mapper, IDizimistaRepository repository, IEnderecoRepository enderecoRepository)
         {
             this.mapper = mapper;
             this.dizimistaRepository = repository;
+            this.enderecoRepository = enderecoRepository;   
         }
 
         public async Task AddSave(ServiceDizimista dizimista)
@@ -94,9 +95,25 @@ namespace SouDizimista.Services.Services
 
             try
             {
-                var entityDizimista = mapper.Map<Dizimista>(dizimista);
-                var dtoDizimista =  await dizimistaRepository.Update(entityDizimista);
-                var dizimistaDto = mapper.Map<ServiceDizimista>(dtoDizimista);
+                var enderecoDizimistaID = await dizimistaRepository.GetById(dizimista.Id);
+
+                #region [Obtem o dizimista.Endereco.Id do Endereco na tabela Dizimista Para que seja atualizado o novo Endereço na Tabela Endereco ]
+
+                  dizimista.Endereco.Id = enderecoDizimistaID.EnderecoId;
+                  var AtualizaEndereco = mapper.Map<Endereco>(dizimista.Endereco);
+                  var EnderecoAtualizado = await enderecoRepository.Update(AtualizaEndereco);
+
+                #endregion
+
+                #region [Obtem O dizimista.EnderecoId é obtido na Tabela Dizimista para poder atualizar o Dizimista ]
+
+                  dizimista.EnderecoId = enderecoDizimistaID.EnderecoId;
+                  var entityDizimista = mapper.Map<Dizimista>(dizimista);
+                  var dtoDizimista = await dizimistaRepository.Update(entityDizimista);
+                  var dizimistaDto = mapper.Map<ServiceDizimista>(dtoDizimista);
+
+                #endregion
+
                 return dizimista;
             }
             catch (Exception exception)

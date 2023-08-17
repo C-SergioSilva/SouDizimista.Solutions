@@ -37,6 +37,19 @@ namespace SouDizimista.WebApp.Controllers
             }
              
         }
+        public  ActionResult ObterDizimistas(Guid id)
+        {
+            try
+            {
+                var dizimista = services.ObterInformacoesDizimistasComEndereco(id);
+                return View(dizimista);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
 
         // GET: DizimistaController/Details/5
         public async Task<IActionResult> GetDizmista(Guid id) 

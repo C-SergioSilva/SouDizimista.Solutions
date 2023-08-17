@@ -22,6 +22,10 @@ namespace SouDizimista.Repository.Repositories
         {
             var sql = @"
                       select
+                      diz.Id,
+                      diz.EnderecoId,
+                      diz.CreateAt,
+                      diz.Deleted,
                       diz.Nome,
                       diz.ValorDevolucao,
                       edc.Logradouro,
@@ -36,6 +40,7 @@ namespace SouDizimista.Repository.Repositories
                       where diz.Id = @id"; // Usamos o parâmetro @id na consulta
 
             var resultado = context.Dizimistas.FromSqlRaw(sql, new SqlParameter("@id", id)).ToList();
+            resultado.AsQueryable().Include(e => e.Endereco).FirstOrDefault(w => w.Id.Equals(id));
             return resultado;
         }
 
