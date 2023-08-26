@@ -3,30 +3,27 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace SouDizimista.WebApp.Controllers
 {
-    public class LoginController : Controller
+    public class UsuarioController : Controller
     {
-        public IActionResult Index() 
-        {
-            return View();
-        }
-        public IActionResult Login()
+        // GET: UsuarioController
+        public ActionResult Index()
         {
             return View();
         }
 
-        // GET: LoginController/Details/5 
+        // GET: UsuarioController/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: LoginController/Create
+        // GET: UsuarioController/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: LoginController/Create
+        // POST: UsuarioController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(IFormCollection collection)
@@ -41,13 +38,13 @@ namespace SouDizimista.WebApp.Controllers
             }
         }
 
-        // GET: LoginController/Edit/5
+        // GET: UsuarioController/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: LoginController/Edit/5
+        // POST: UsuarioController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, IFormCollection collection)
@@ -62,13 +59,13 @@ namespace SouDizimista.WebApp.Controllers
             }
         }
 
-        // GET: LoginController/Delete/5
+        // GET: UsuarioController/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: LoginController/Delete/5
+        // POST: UsuarioController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, IFormCollection collection)
