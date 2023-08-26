@@ -10,6 +10,7 @@ namespace SouDizimista.Repository.ContextDB
         public DbSet<Dizimista> Dizimistas { get; set; }
         public DbSet<Capela> Capelas { get; set; }
         public DbSet<Capela> Enderecos { get; set; } 
+        public DbSet<Usuario> Usuarios { get; set; }    
         public Context(DbContextOptions options) : base(options) { }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
