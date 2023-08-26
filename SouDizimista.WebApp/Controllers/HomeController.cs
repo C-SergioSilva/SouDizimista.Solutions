@@ -25,7 +25,9 @@ namespace SouDizimista.WebApp.Controllers
 
         public IActionResult Login() 
         {
-            return RedirectToAction("Index", "Home"); ;
+           /* return RedirectToAction("Login", "Home"); */
+
+            return View();
         }
 
         public IActionResult Privacy()
