@@ -75,7 +75,21 @@ namespace SouDizimista.WebApp
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Login}/{action=Login}/{id?}");
-            }); 
+            });
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                    name: "Home",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
+            });
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                    name: "Menu",
+                    pattern: "{controller=Menu}/{action=GetMenuItems}/{id?}");
+            });
         }
     }
 }

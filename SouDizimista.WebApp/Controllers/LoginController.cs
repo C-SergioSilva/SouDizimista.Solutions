@@ -11,7 +11,7 @@ namespace SouDizimista.WebApp.Controllers
         }
         public IActionResult Login()
         {
-            return View();
+            return RedirectToAction("Index", "Home");
         }
 
         // GET: LoginController/Details/5 
