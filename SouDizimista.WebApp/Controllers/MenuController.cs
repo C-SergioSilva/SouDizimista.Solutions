@@ -13,7 +13,7 @@ namespace SouDizimista.WebApp.Controllers
         }
 
         [HttpPost]
-        public ActionResult GetMenuItems(string module)
+        public IActionResult GetMenuItems(string module)
         {
             var menuItems = menuService.GetMenuItems(module);
 
