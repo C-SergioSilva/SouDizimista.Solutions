@@ -116,6 +116,35 @@ namespace SouDizimista.Repository.Migrations
                     b.ToTable("Endereco");
                 });
 
+            modelBuilder.Entity("SouDizimista.Domain.Entities.MenuItem", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Action")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Controller")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreateAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("Deleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Icon")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ModuloMenu");
+                });
+
             modelBuilder.Entity("SouDizimista.Domain.Entities.Paroquia", b =>
                 {
                     b.Property<Guid>("Id")

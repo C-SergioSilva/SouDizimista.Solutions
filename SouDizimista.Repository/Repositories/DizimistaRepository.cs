@@ -1,22 +1,17 @@
-﻿using SouDizimista.Domain.Entities;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
+using SouDizimista.Domain.Entities;
 using SouDizimista.Domain.Interfaces;
 using SouDizimista.Repository.ContextDB;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
-using System.Linq;
-using System.Threading.Tasks;
 using System;
-using Microsoft.Data.SqlClient;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace SouDizimista.Repository.Repositories
 {
     public class DizimistaRepository : RepositoryBase<Dizimista>, IDizimistaRepository
     {
-        public DizimistaRepository(Context context) : base(context)
-        {
-
-
-        }
+        public DizimistaRepository(Context context) : base(context){}
 
         public List<Dizimista> ObterInformacoesDizimistasComEndereco(Guid id)
         {

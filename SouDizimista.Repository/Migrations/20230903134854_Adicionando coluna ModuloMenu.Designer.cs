@@ -10,8 +10,8 @@ using SouDizimista.Repository.ContextDB;
 namespace SouDizimista.Repository.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20230826163147_INICIO")]
-    partial class INICIO
+    [Migration("20230903134854_Adicionando coluna ModuloMenu")]
+    partial class AdicionandocolunaModuloMenu
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -116,6 +116,35 @@ namespace SouDizimista.Repository.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Endereco");
+                });
+
+            modelBuilder.Entity("SouDizimista.Domain.Entities.MenuItem", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Action")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Controller")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreateAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("Deleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Icon")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ModuloMenu");
                 });
 
             modelBuilder.Entity("SouDizimista.Domain.Entities.Paroquia", b =>

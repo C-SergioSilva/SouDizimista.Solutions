@@ -40,6 +40,7 @@ namespace SouDizimista.WebApp
             services.AddScoped(typeof(ICapelaRepository), typeof(CapelaRepository));
             services.AddScoped(typeof(IEnderecoRepository), typeof(EnderecoRepository));
             services.AddScoped(typeof(IUsuarioRepository), typeof(UsuarioRepository));
+            services.AddScoped(typeof(IMenuModuloRepository), typeof(MenuModuloRepository));
 
             // Serviços
             services.AddScoped(typeof(IDizimistaServices), typeof(DizimistaServices));
@@ -47,6 +48,7 @@ namespace SouDizimista.WebApp
             services.AddScoped(typeof(ICapelaServices), typeof(CapelaServices));
             services.AddScoped(typeof(IEnderecoServices), typeof(EnderecoServices));
             services.AddScoped(typeof(IUsuarioServices), typeof(UsuarioServices));
+            services.AddScoped(typeof(IMenuService), typeof(MenuServices));
 
         }
 

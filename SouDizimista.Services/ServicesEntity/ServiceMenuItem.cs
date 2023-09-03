@@ -8,6 +8,7 @@ namespace SouDizimista.Services.ServicesEntity
 {
     public class ServiceMenuItem
     {
+        public Guid? Id { get; set; }
         public string Controller { get; set; }
         public string Action { get; set; }
         public string Icon { get; set; }

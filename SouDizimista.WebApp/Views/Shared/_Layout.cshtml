@@ -48,7 +48,8 @@
                     <nav>
                         <ul>
                             <li>
-                                <a id="dizimo-menu" asp-controller="Dizimo" asp-action="GetAllParoquia" class="nav-link nav-menu hand" data-module="Dizimo">Dizimo</a>
+                                @*<a id="dizimo-menu" asp-controller="Dizimo" asp-action="GetAllParoquia" class="nav-link nav-menu hand" data-module="MenuDizimo">Dizimo</a>*@
+                                <a id="dizimo-menu" class="nav-link nav-menu hand" data-module="Dizimista">Dizimo</a>
                             </li>
                             <!-- Adicione outros links de módulos aqui -->
                         </ul>
@@ -145,7 +146,7 @@
     <script>
         $(document).ready(function() {
             // Capturar o clique nos links dos módulos
-            $('.nav-menu').click(function(e) {
+            $('#dizimo-menu').click(function(e) {
                 e.preventDefault(); // Impede o comportamento padrão do link
 
                 var moduleName = $(this).data('module'); // Obtém o nome do módulo do atributo "data-module"
