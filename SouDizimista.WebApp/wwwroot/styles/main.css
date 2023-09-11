@@ -145,6 +145,7 @@ nav ul li a span:hover{
     overflow-x: hidden;
     transition: 0.6s;
     margin: 0.1rem;
+    visibility: hidden;
 }
 /*.navigation:hover{
     width: 300px;

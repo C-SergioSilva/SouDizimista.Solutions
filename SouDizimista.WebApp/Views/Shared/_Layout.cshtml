@@ -47,11 +47,29 @@
                 <div class="menu-items">
                     <nav>
                         <ul>
-                            <li>
-                                @*<a id="dizimo-menu" asp-controller="Dizimo" asp-action="GetAllParoquia" class="nav-link nav-menu hand" data-module="MenuDizimo">Dizimo</a>*@
-                                <a id="dizimo-menu" class="nav-link nav-menu hand" data-module="Dizimista">Dizimo</a>
-                            </li>
+                            
                             <!-- Adicione outros links de módulos aqui -->
+
+                            <li>
+                                <a id="modulo-menu" class="nav-link nav-menu hand" data-module="Dizimista">Dizimo</a>
+                            </li>
+
+                            <li>
+                                <a id="modulo-menu" class="nav-link nav-menu hand" data-module="Paroquia"> Paroquia </a>
+                            </li>
+
+                            <li>
+                                <a id="modulo-menu" class="nav-link nav-menu hand" data-module="Administracao"> Administração </a>
+                            </li>
+
+                            <li>
+                                <a id="modulo-menu" class="nav-link nav-menu hand" data-module="Financeiro"> Financeiro </a>
+                            </li>
+
+                            <li>
+                                <a id="modulo-menu" class="nav-link nav-menu hand" data-module="Seguranca"> Segurança </a>
+                            </li>
+
                         </ul>
                     </nav>
                 </div>
@@ -62,11 +80,9 @@
 
         <aside>
             <section class="sidebar">
-
-                <div class="navigation">
-
-                    <!-- Menu antigo-->
-                    <!-- Meuno Antigo
+                
+                  <!-- Menu antigo-->
+                  <!-- Meuno Antigo
                     @* <ul>
 
                     <li class="list active">
@@ -106,15 +122,12 @@
                     </li>
                     </ul>*@ -->
 
-                    <aside>
-                        <section class="sidebar">
-                            <div class="navigation">
-                                <ul>
-                                    <!-- A lista de itens de menu será renderizada aqui -->
-                                </ul>
-                            </div>
-                        </section>
-                    </aside>
+                <div class="navigation">             
+
+                    <ul>
+                        <!-- A lista de itens de menu será renderizada aqui -->
+                    </ul>
+
                 </div>
 
             </section>
@@ -146,8 +159,10 @@
     <script>
         $(document).ready(function() {
             // Capturar o clique nos links dos módulos
-            $('#dizimo-menu').click(function(e) {
+            $('#modulo-menu').click(function(e) {
                 e.preventDefault(); // Impede o comportamento padrão do link
+
+                document.querySelector('.navigation').style.visibility = 'visible';
 
                 var moduleName = $(this).data('module'); // Obtém o nome do módulo do atributo "data-module"
 
