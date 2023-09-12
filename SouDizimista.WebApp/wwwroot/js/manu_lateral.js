@@ -11,7 +11,7 @@ list.forEach((item) =>
     item.addEventListener('click', ActiveLink)
 );
 
-let menuList = document.querySelectorAll('#paroquias-menu');
+let menuList = document.querySelectorAll('#modulo-menu');
 
 
 menuList.forEach((item) =>

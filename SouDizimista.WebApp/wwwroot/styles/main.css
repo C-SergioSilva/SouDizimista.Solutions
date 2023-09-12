@@ -147,9 +147,9 @@ nav ul li a span:hover{
     margin: 0.1rem;
     visibility: hidden;
 }
-/*.navigation:hover{
+.navigation:hover{
     width: 300px;
-}*/
+}
 
 .navigation ul{
     position:absolute;
@@ -227,6 +227,10 @@ white-space: nowrap;
         border-radius: 50%;
         box-shadow: 15px -15px 0 #039090;
     }
+
+.list:hover {
+    background-color: #039090;
+}
 
 
 
