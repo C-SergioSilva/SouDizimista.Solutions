@@ -9,5 +9,8 @@ namespace SouDizimista.Services.ServicesEntity
         public string NomeParoco { get; set; }
         public string RazaoSocial { get; set; }
         public string NomeFantasia { get; set; }
+
+        public Guid? EnderecoId { get; set; }
+        public ServiceEndereco Endereco { get; set; }     
     }
 }

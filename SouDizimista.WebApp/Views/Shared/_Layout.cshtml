@@ -150,8 +150,8 @@
     <script src="~/js/NewDizimista.js"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/menu_lateral.js"> </script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    <script src="~/js/manu_lateral.js"></script>
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg .com/ionicons@5.5.2/dist/ionicons/ionicons.js"> </script>
@@ -159,7 +159,7 @@
     <script>
         $(document).ready(function() {
             // Capturar o clique nos links dos módulos
-            $('#modulo-menu').click(function(e) {
+            $('.nav-menu').click(function(e) {
                 e.preventDefault(); // Impede o comportamento padrão do link
 
                 document.querySelector('.navigation').style.visibility = 'visible';

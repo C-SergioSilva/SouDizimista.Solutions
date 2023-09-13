@@ -9,11 +9,11 @@ namespace SouDizimista.WebApp.Controllers
 {
     public class ParoquiaController : Controller
     {
-        private readonly IParoquiaServices serviceParoqauia;
+        private readonly IParoquiaServices paroquiaService;
 
-        public ParoquiaController(IParoquiaServices serviceParoqauia)
+        public ParoquiaController(IParoquiaServices paroquiaService)
         {
-            this.serviceParoqauia = serviceParoqauia;
+            this.paroquiaService = paroquiaService;
         }
         // GET: ParoquiaController
         public ActionResult Index()
@@ -25,7 +25,7 @@ namespace SouDizimista.WebApp.Controllers
         {
             try
             {
-                var paroquias = await serviceParoqauia.GetAll();
+                var paroquias = await paroquiaService.GetAll();
                 return View(paroquias);
             }
             catch (Exception ex)
@@ -36,11 +36,11 @@ namespace SouDizimista.WebApp.Controllers
             
         } 
 
-        public async Task<IActionResult> GetParoquia(Guid id)
+        public async Task<IActionResult> GetParoquiaById(Guid id) 
         {
             try
             {
-                var paroquia = await serviceParoqauia.GetById(id);
+                var paroquia = await paroquiaService.GetById(id);
                 return View(paroquia);  
 
             }
@@ -52,11 +52,11 @@ namespace SouDizimista.WebApp.Controllers
         }
 
         // GET: ParoquiaController/Details/5
-        public async Task<IActionResult> DetailsParoquia(Guid id)
+        public async Task<IActionResult> ConsultParoquia(Guid id) 
         {
             try
             {
-                var paroquia = await serviceParoqauia.GetById(id);
+                var paroquia = await paroquiaService.GetById(id);
                 return View(paroquia);
             }
             catch (Exception ex)
@@ -67,7 +67,7 @@ namespace SouDizimista.WebApp.Controllers
         }
 
         // GET: ParoquiaController/Create
-        public ActionResult CreateParoquia()
+        public ActionResult NewParoquia() 
         {
             return View(); 
         }
@@ -75,44 +75,56 @@ namespace SouDizimista.WebApp.Controllers
         // POST: ParoquiaController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CreateParoquia(ServiceParoquia paroquia)
+        public async Task<IActionResult> NewParoquia(ServiceParoquia paroquia) 
         {
             try
             { 
                 if (paroquia.Id == Guid.Empty)
                 {
-                    await serviceParoqauia.AddSave(paroquia);
+                    await paroquiaService.AddSave(paroquia);
                 }
                 else
                 {
-                    await serviceParoqauia.Update(paroquia);
+                    await paroquiaService.Update(paroquia);
                 }
                 return RedirectToAction(nameof(GetAllParoquia));
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
+
         }
 
         // GET: ParoquiaController/Edit/5
-        public ActionResult Edit(int id)
+        public async Task<IActionResult> EditParoquia(Guid id) 
         {
-            return View();
+            try
+            {
+                var paroquia = await paroquiaService.GetById(id);
+                return View(paroquia);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
         }
 
         // POST: ParoquiaController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public async Task<IActionResult> Edit(ServiceParoquia serviceparoquia)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                var paroquia = await paroquiaService.Update(serviceparoquia);
+                return View(paroquia);
             }
-            catch
+            catch (Exception ex)
             {
-                return View();
+
+                throw new Exception(ex.Message);
             }
         }
 
@@ -121,7 +133,7 @@ namespace SouDizimista.WebApp.Controllers
         {
             try
             {
-                var paroquia = await serviceParoqauia.GetById(id);
+                var paroquia = await paroquiaService.GetById(id);
                 return View(paroquia);
             }
             catch (Exception ex)
@@ -139,7 +151,7 @@ namespace SouDizimista.WebApp.Controllers
         {
             try
             {
-                await serviceParoqauia.MarkAsDeleted(paroquia.Id);
+                await paroquiaService.MarkAsDeleted(paroquia.Id);
                 return RedirectToAction(nameof(GetAllParoquia));
             }
             catch(Exception ex)

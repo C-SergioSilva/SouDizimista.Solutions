@@ -1,6 +1,7 @@
 ﻿var list = document.querySelectorAll('.list');
 
 function ActiveLink() {
+    debugger;
     list.forEach((item) =>
         item.classList.remove('active'));
     this.classList.add('active');
