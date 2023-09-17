@@ -10,5 +10,8 @@ namespace SouDizimista.Domain.Entities
         public string RazaoSocial { get; set; }
         public string NomeFantasia { get; set; }
 
+        public Guid EnderecoId { get; set; } 
+        public Endereco Endereco { get; set; }
+
     }
 }
