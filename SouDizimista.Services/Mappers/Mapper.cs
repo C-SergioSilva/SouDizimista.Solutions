@@ -12,6 +12,7 @@ namespace SouDizimista.Services.Mappers
             CreateMap<Dizimista, ServiceDizimista>().ReverseMap();
             CreateMap<Capela, ServiceCapela>().ReverseMap();
             CreateMap<Endereco, ServiceEndereco>().ReverseMap();
+            CreateMap<MenuItem, ServiceMenuItem>().ReverseMap();
         }
     }
 }

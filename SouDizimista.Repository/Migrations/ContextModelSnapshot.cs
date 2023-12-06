@@ -19,7 +19,66 @@ namespace SouDizimista.Repository.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.0");
 
+            modelBuilder.Entity("SouDizimista.Domain.Entities.Capela", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreateAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("Deleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Endereco")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("IdParoquia")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Nome")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid?>("ParoquiaId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ParoquiaId");
+
+                    b.ToTable("Capela");
+                });
+
             modelBuilder.Entity("SouDizimista.Domain.Entities.Dizimista", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreateAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("Deleted")
+                        .HasColumnType("bit");
+
+                    b.Property<Guid>("EnderecoId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Nome")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("ValorDevolucao")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EnderecoId");
+
+                    b.ToTable("Dizimista");
+                });
+
+            modelBuilder.Entity("SouDizimista.Domain.Entities.Endereco", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -49,18 +108,41 @@ namespace SouDizimista.Repository.Migrations
                     b.Property<string>("Municipio")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Nome")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Numero")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("ValorDevolucao")
-                        .HasColumnType("decimal(18,2)");
+                    b.HasKey("Id");
+
+                    b.ToTable("Endereco");
+                });
+
+            modelBuilder.Entity("SouDizimista.Domain.Entities.MenuItem", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Action")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Controller")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreateAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("Deleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Icon")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Dizimista");
+                    b.ToTable("ModuloMenu");
                 });
 
             modelBuilder.Entity("SouDizimista.Domain.Entities.Paroquia", b =>
@@ -90,6 +172,68 @@ namespace SouDizimista.Repository.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Paroquia");
+                });
+
+            modelBuilder.Entity("SouDizimista.Domain.Entities.Usuario", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreateAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("Deleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("EmailUsuario")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("EnderecoId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("NomeUsuario")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SenhaUsuario")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EnderecoId");
+
+                    b.ToTable("Usuario");
+                });
+
+            modelBuilder.Entity("SouDizimista.Domain.Entities.Capela", b =>
+                {
+                    b.HasOne("SouDizimista.Domain.Entities.Paroquia", "Paroquia")
+                        .WithMany()
+                        .HasForeignKey("ParoquiaId");
+
+                    b.Navigation("Paroquia");
+                });
+
+            modelBuilder.Entity("SouDizimista.Domain.Entities.Dizimista", b =>
+                {
+                    b.HasOne("SouDizimista.Domain.Entities.Endereco", "Endereco")
+                        .WithMany()
+                        .HasForeignKey("EnderecoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Endereco");
+                });
+
+            modelBuilder.Entity("SouDizimista.Domain.Entities.Usuario", b =>
+                {
+                    b.HasOne("SouDizimista.Domain.Entities.Endereco", "Endereco")
+                        .WithMany()
+                        .HasForeignKey("EnderecoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Endereco");
                 });
 #pragma warning restore 612, 618
         }

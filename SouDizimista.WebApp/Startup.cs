@@ -39,12 +39,16 @@ namespace SouDizimista.WebApp
             services.AddScoped(typeof(IParoquiaRepository), typeof(ParoquiaRepository));
             services.AddScoped(typeof(ICapelaRepository), typeof(CapelaRepository));
             services.AddScoped(typeof(IEnderecoRepository), typeof(EnderecoRepository));
+            services.AddScoped(typeof(IUsuarioRepository), typeof(UsuarioRepository));
+            services.AddScoped(typeof(IMenuModuloRepository), typeof(MenuModuloRepository));
 
             // Serviços
             services.AddScoped(typeof(IDizimistaServices), typeof(DizimistaServices));
             services.AddScoped(typeof(IParoquiaServices), typeof(ParoquiaServices));
             services.AddScoped(typeof(ICapelaServices), typeof(CapelaServices));
-            services.AddScoped(typeof(IEnderecoServices), typeof(EnderecoServices)); 
+            services.AddScoped(typeof(IEnderecoServices), typeof(EnderecoServices));
+            services.AddScoped(typeof(IUsuarioServices), typeof(UsuarioServices));
+            services.AddScoped(typeof(IMenuService), typeof(MenuServices));
 
         }
 
@@ -72,8 +76,22 @@ namespace SouDizimista.WebApp
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Login}/{id?}");
-            }); 
+                    pattern: "{controller=Login}/{action=Login}/{id?}");
+            });
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                    name: "Home",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
+            });
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                    name: "Menu",
+                    pattern: "{controller=Menu}/{action=GetMenuItems}/{id?}");
+            });
         }
     }
 }

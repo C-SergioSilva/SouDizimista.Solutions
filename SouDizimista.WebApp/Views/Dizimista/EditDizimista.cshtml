@@ -6,16 +6,16 @@
 
 <div class="container">
     <div class="row">
-        <form class="needs-validation" asp-action="ObterDizimistas">
+        <form class="needs-validation" asp-action="EditDizimista">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
             <h2 class="title-lable-dizimista"> Atualizar Dizimista </h2>
-            <hr />
-            <div class="row">
+            <hr />         
+            <div class="row"> 
                 <div class="col-md-6">
                     <label asp-for="Nome" class="control-label title-lable-dizimista">Nome do Dizimista</label>
                     <input asp-for="Nome" class="form-control" />
-                    <span asp-validation-for="Nome" class="text-danger"></span>
+                    <span asp-validation-for="Nome" class="text-danger">teste</span>
                 </div>
                 <div class="col-md-6">
                     <label asp-for="ValorDevolucao" class="control-label title-lable-dizimista">Valor do Dizimo</label>

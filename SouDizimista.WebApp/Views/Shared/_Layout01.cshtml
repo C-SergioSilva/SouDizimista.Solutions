@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Sou Dizimista</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/styles/main.css" />
+    <link rel="stylesheet" href="~/styles/main-content.css" />
+    <link rel="stylesheet" href="~/styles/NossosDizimista.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <nav class="header-nav">
+            <div class="logo">
+                <a class="icon-menu-logo" asp-controller="Home" asp-action="Index">Sou Dizimista</a>
+            </div>
+
+            <!-- Itens do Menu antigo -->
+            <!--
+            @*<div class="menu-items">
+            <nav>
+            <ul>
+            <li>
+            <a id="paroquias-menu" asp-controller="Dizimo" asp-action="GetAllParoquia" class="nav-link nav-menu hand">Dizimo</a>
+            </li>
+
+            <li>
+            <a class="nav-link  nav-menu" asp-area="" asp-controller="Administracao" asp-action="Administrar"> Administração </a>
+            </li>
+
+            <li>
+            <a class="nav-link  nav-menu" asp-area="" asp-controller="Financeiro" asp-action="Financas">Financeiro</a>
+            </li>
+
+            <li>
+            <a class="nav-link nav-menu" asp-area="" asp-controller="Home" asp-action="Privacy">Configurações</a>
+            </li>
+            </ul>
+            </nav>
+            </div>*@-->
+
+            <nav class="header-nav">
+                <div class="menu-items">
+                    <nav>
+                        <ul>
+                            
+                            <!-- Adicione outros links de módulos aqui -->
+
+                            <li>
+                                <a id="modulo-menu" class="nav-link nav-menu hand" data-module="Dizimista">Dizimo</a>
+                            </li>
+
+                            <li>
+                                <a id="modulo-menu" class="nav-link nav-menu hand" data-module="Paroquia"> Paroquia </a>
+                            </li>
+
+                            <li>
+                                <a id="modulo-menu" class="nav-link nav-menu hand" data-module="Administracao"> Administração </a>
+                            </li>
+
+                            <li>
+                                <a id="modulo-menu" class="nav-link nav-menu hand" data-module="Financeiro"> Financeiro </a>
+                            </li>
+
+                            <li>
+                                <a id="modulo-menu" class="nav-link nav-menu hand" data-module="Seguranca"> Segurança </a>
+                            </li>
+
+                        </ul>
+                    </nav>
+                </div>
+            </nav>
+
+
+        </nav>
+
+        <aside>
+            <section class="sidebar">
+                
+                  <!-- Menu antigo-->
+                  <!-- Meuno Antigo
+                    @* <ul>
+
+                    <li class="list active">
+                    <a asp-area="" asp-controller="Paroquia" asp-action="CreateParoquia">
+                    <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                    <span class="title">Nova Paróquia</span>
+                    </a>
+                    </li>
+
+                    <li class="list">
+                    <a asp-area="" asp-controller="Dizimista" asp-action="NewDizimista">
+                    <span class="icon"><ion-icon name="body-outline"></ion-icon></span>
+                    <span class="title">Novo Dizimista</span>
+                    </a>
+                    </li>
+
+                    <li class="list">
+                    <a asp-area="" asp-controller="Dizimista" asp-action="GetAllDizimista">
+                    <span class="icon"><ion-icon name="people-outline"></ion-icon></span>
+                    <span class="title">Nossos Dizimistas</span>
+                    </a>
+                    </li>
+
+
+                    <li class="list">
+                    <a asp-area="" asp-controller="Home" asp-action="Privacy">
+                    <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+                    <span class="title">Configurações</span>
+                    </a>
+                    </li>
+
+                    <li class="list">
+                    <a asp-area="" asp-controller="Home" asp-action="Privacy">
+                    <span class="icon"><ion-icon name="exit-outline"></ion-icon></span>
+                    <span class="title">Sair</span>
+                    </a>
+                    </li>
+                    </ul>*@ -->
+
+                <div class="navigation">             
+
+                    <ul>
+                        <!-- A lista de itens de menu será renderizada aqui -->
+                    </ul>
+
+                </div>
+
+            </section>
+        </aside>
+    </header>
+    <div class="content-body">
+        <div class="container">
+            <main role="main" class="content-main">
+                @RenderBody()
+            </main>
+        </div>
+    </div>
+
+
+    <footer class="border-top footer text-muted">
+        <div class="container-footer">
+            &copy; Gms-Solutions-Technology <a asp-area="" asp-controller="Home" asp-action="Privacy"></a>
+        </div>
+    </footer>
+    <script src="~/js/NewDizimista.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/manu_lateral.js"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg .com/ionicons@5.5.2/dist/ionicons/ionicons.js"> </script>
+
+    <script>
+        $(document).ready(function() {
+            // Capturar o clique nos links dos módulos
+            $('.nav-menu').click(function (e) {
+                e.preventDefault(); // Impede o comportamento padrão do link
+
+                document.querySelector('.navigation').style.visibility = 'visible';
+
+                var moduleName = $(this).data('module'); // Obtém o nome do módulo do atributo "data-module"
+                
+                // Carrega os itens de menu correspondentes ao módulo selecionado
+                loadMenuItems(moduleName);
+            });
+
+            // Função para carregar os itens de menu
+            function loadMenuItems(moduleName) {
+                $.ajax({
+                    url: '/Menu/GetMenuItems', // Rota para a ação que obtém os itens de menu
+                    type: 'POST',
+                    data: { module: moduleName },
+                    success: function(response) {
+                        // Atualizar o menu lateral com os itens de menu obtidos
+                        $('.navigation ul').html(response);
+                    },
+                    error: function(error) {
+                        console.log(error);
+                    }
+                });
+            }
+        });
+    </script>
+
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
