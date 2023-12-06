@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SouDizimista.Domain.Entities;
+using System;
 
 namespace SouDizimista.Services.ServicesEntity
 {
@@ -10,7 +11,8 @@ namespace SouDizimista.Services.ServicesEntity
         public string RazaoSocial { get; set; }
         public string NomeFantasia { get; set; }
 
-        public Guid? EnderecoId { get; set; }
-        public ServiceEndereco Endereco { get; set; }     
+        public Guid EnderecoId { get; set; }    
+        public Endereco Endereco { get; set; }  
+
     }
 }

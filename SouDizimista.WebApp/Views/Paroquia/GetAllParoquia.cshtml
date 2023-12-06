@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Paroquias";
+    Layout = "_Layout"; // Especifica o layout principal
 }
 
 <h3 class="color-source" ">Pároquias</h3>
@@ -37,8 +38,8 @@
             </td>
 
             <td>
-                @Html.ActionLink("Alterar", "NewParoquia", new { id = item.Id }, new { @class = "btn btn-info" })
-                @Html.ActionLink("Consultar", "ConsultParoquia", new { id = item.Id }, new {@class = "btn btn-secondary" })
+                @Html.ActionLink("Alterar", "CreateParoquia", new { id = item.Id }, new { @class = "btn btn-info" })
+                @Html.ActionLink("Consultar", "DetailsParoquia", new { id = item.Id }, new {@class = "btn btn-secondary" })
                 @Html.ActionLink("Excluir", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
             </td>
         </tr>

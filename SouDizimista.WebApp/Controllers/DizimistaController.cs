@@ -10,9 +10,11 @@ namespace SouDizimista.WebApp.Controllers
     public class DizimistaController : Controller
     {
         protected readonly IDizimistaServices services;
-        public DizimistaController(IDizimistaServices services)
+        protected readonly IEnderecoServices servicesEndereco; 
+        public DizimistaController(IDizimistaServices services, IEnderecoServices servicesEndereco)
         {
            this.services = services;  
+           this.servicesEndereco = servicesEndereco;
         }
 
         public IActionResult Index()
@@ -97,10 +99,10 @@ namespace SouDizimista.WebApp.Controllers
                 var dizimista =  await services.GetById(id);
                 return View(dizimista);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
-                throw new Exception(ex.Message);
+                throw;
             }
          
         }
@@ -128,12 +130,12 @@ namespace SouDizimista.WebApp.Controllers
                 var dizimista = await services.GetById(id);
                 return View(dizimista);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
-                throw new Exception(ex.Message);
+                throw;
             }
-
+             
         }
 
         // GET: DizimistaController/Delete/5
@@ -162,10 +164,9 @@ namespace SouDizimista.WebApp.Controllers
                 await services.MarkAsDeleted(dizimista.Id);
                 return RedirectToAction(nameof(GetAllDizimista));
             }
-            catch (Exception ex)
+            catch
             {
-
-                throw new Exception(ex.Message);
+                return View();
             }
         }
     }
