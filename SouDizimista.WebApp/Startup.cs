@@ -42,7 +42,7 @@ namespace SouDizimista.WebApp
             services.AddScoped(typeof(IUsuarioRepository), typeof(UsuarioRepository));
             services.AddScoped(typeof(IMenuModuloRepository), typeof(MenuModuloRepository));
 
-            // Serviços
+            // Servicos
             services.AddScoped(typeof(IDizimistaServices), typeof(DizimistaServices));
             services.AddScoped(typeof(IParoquiaServices), typeof(ParoquiaServices));
             services.AddScoped(typeof(ICapelaServices), typeof(CapelaServices));
