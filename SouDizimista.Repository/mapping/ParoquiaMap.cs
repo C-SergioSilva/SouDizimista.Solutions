@@ -10,7 +10,6 @@ namespace SouDizimista.Repository.mapping
         {
             builder.ToTable("Paroquia");
             builder.HasQueryFilter(p => !p.Deleted);
-
         }
     }
 }

@@ -14,121 +14,47 @@
 </head>
 <body>
     <header>
-        <nav class="header-nav">
+        <div class="header">
+
             <div class="logo">
-                <a class="icon-menu-logo" asp-controller="Home" asp-action="Index">Sou Dizimista</a>
+                <div class="logo-img"></div>
             </div>
 
-            <!-- Itens do Menu antigo -->
-            <!--
-            @*<div class="menu-items">
-            <nav>
-            <ul>
-            <li>
-            <a id="paroquias-menu" asp-controller="Dizimo" asp-action="GetAllParoquia" class="nav-link nav-menu hand">Dizimo</a>
-            </li>
+            <div class="titulo-modulo">
+                titulo
+            </div>
 
-            <li>
-            <a class="nav-link  nav-menu" asp-area="" asp-controller="Administracao" asp-action="Administrar"> Administração </a>
-            </li>
+            <div class="modulos-menu">
+                <div class="usuario">
+                    Usuário
+                </div>
 
-            <li>
-            <a class="nav-link  nav-menu" asp-area="" asp-controller="Financeiro" asp-action="Financas">Financeiro</a>
-            </li>
-
-            <li>
-            <a class="nav-link nav-menu" asp-area="" asp-controller="Home" asp-action="Privacy">Configurações</a>
-            </li>
-            </ul>
-            </nav>
-            </div>*@-->
-
-            <nav class="header-nav">
-                <div class="menu-items">
+                <div class="modulos">
                     <nav>
                         <ul>
-                            
-                            <!-- Adicione outros links de módulos aqui -->
 
                             <li>
-                                <a id="modulo-menu" class="nav-link nav-menu hand" data-module="Dizimista">Dizimo</a>
+                                <a href="#" >Cadastro</a>
+                            </li>
+
+                             <li>
+                                <a href="#" >Adminstrativo</a>
                             </li>
 
                             <li>
-                                <a id="modulo-menu" class="nav-link nav-menu hand" data-module="Paroquia"> Paroquia </a>
-                            </li>
-
-                            <li>
-                                <a id="modulo-menu" class="nav-link nav-menu hand" data-module="Administracao"> Administração </a>
-                            </li>
-
-                            <li>
-                                <a id="modulo-menu" class="nav-link nav-menu hand" data-module="Financeiro"> Financeiro </a>
-                            </li>
-
-                            <li>
-                                <a id="modulo-menu" class="nav-link nav-menu hand" data-module="Seguranca"> Segurança </a>
+                                <a href="#">Financeiro</a>
                             </li>
 
                         </ul>
                     </nav>
                 </div>
-            </nav>
+            </div>
 
-
-        </nav>
-
-        <aside>
-            <section class="sidebar">
+        </div>
+              
+        <aside class="navigation">
+            <section>
                 
-                  <!-- Menu antigo-->
-                  <!-- Meuno Antigo
-                    @* <ul>
-
-                    <li class="list active">
-                    <a asp-area="" asp-controller="Paroquia" asp-action="CreateParoquia">
-                    <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
-                    <span class="title">Nova Paróquia</span>
-                    </a>
-                    </li>
-
-                    <li class="list">
-                    <a asp-area="" asp-controller="Dizimista" asp-action="NewDizimista">
-                    <span class="icon"><ion-icon name="body-outline"></ion-icon></span>
-                    <span class="title">Novo Dizimista</span>
-                    </a>
-                    </li>
-
-                    <li class="list">
-                    <a asp-area="" asp-controller="Dizimista" asp-action="GetAllDizimista">
-                    <span class="icon"><ion-icon name="people-outline"></ion-icon></span>
-                    <span class="title">Nossos Dizimistas</span>
-                    </a>
-                    </li>
-
-
-                    <li class="list">
-                    <a asp-area="" asp-controller="Home" asp-action="Privacy">
-                    <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
-                    <span class="title">Configurações</span>
-                    </a>
-                    </li>
-
-                    <li class="list">
-                    <a asp-area="" asp-controller="Home" asp-action="Privacy">
-                    <span class="icon"><ion-icon name="exit-outline"></ion-icon></span>
-                    <span class="title">Sair</span>
-                    </a>
-                    </li>
-                    </ul>*@ -->
-
-                <div class="navigation">             
-
-                    <ul>
-                        <!-- A lista de itens de menu será renderizada aqui -->
-                    </ul>
-
-                </div>
 
             </section>
         </aside>
@@ -142,7 +68,7 @@
     </div>
 
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer-gms text-muted">
         <div class="container-footer">
             &copy; Gms-Solutions-Technology <a asp-area="" asp-controller="Home" asp-action="Privacy"></a>
         </div>
@@ -162,7 +88,7 @@
             $('.nav-menu').click(function (e) {
                 e.preventDefault(); // Impede o comportamento padrão do link
 
-                document.querySelector('.navigation').style.visibility = 'visible';
+                // document.querySelector('.navigation').style.visibility = 'visible';
 
                 var moduleName = $(this).data('module'); // Obtém o nome do módulo do atributo "data-module"
                 
