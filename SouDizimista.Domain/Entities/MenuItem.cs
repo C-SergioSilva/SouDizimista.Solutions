@@ -13,5 +13,6 @@ namespace SouDizimista.Domain.Entities
         public string Action { get; set; }
         public string Icon { get; set; }
         public string Title { get; set; }
+        public string UrlModulo { get; set; }   
     }
 }

@@ -32,20 +32,20 @@
 
                 <div class="modulos">
                     
-                    <img id="icone-suspenso" src="~/icones/menu.png" />
+                    <img class="modulos" id="icone-suspenso" src="~/icones/menu.png" />
                     
                     <nav class="menu-nav">
                         <ul>
                             <li>
-                                <a href="#" >Cadastro</a>
+                                <a data-module="Cadastro" class="obterDados">Cadastro</a>
                             </li>
 
                              <li>
-                                <a href="#" >Adminstrativo</a>
+                                <a data-module="Administrativo">Adminstrativo</a>
                             </li>
 
                             <li>
-                                <a href="#">Financeiro</a>
+                                <a data-module="Financeiro">Financeiro</a>
                             </li>
 
                         </ul>
@@ -55,8 +55,12 @@
 
         </div>
               
-        <aside class="navigation">
+        <aside id="navigator" class="navigation">
             <section>
+                <h1 class="funcionalidade"> Funcionalidades </h1>
+                <ul>
+
+                </ul>
                 
 
             </section>
@@ -76,19 +80,24 @@
             &copy; Gms-Solutions-Technology <a asp-area="" asp-controller="Home" asp-action="Privacy"></a>
         </div>
     </footer>
-    <script src="~/js/NewDizimista.js"></script>
+    <script src="~/js/adiciona-dizimista.js"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    <script src="~/js/manu_lateral.js"></script>
+    <script src="~/js/menu_lateral.js"></script>
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg .com/ionicons@5.5.2/dist/ionicons/ionicons.js"> </script>
 
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
+
+            $('#icone-suspenso').click(function () {
+                document.querySelector('.menu-nav').style.display = 'block';
+            });
+
             // Capturar o clique nos links dos módulos
-            $('.nav-menu').click(function (e) {
+            $('.obterDados').click(function (e) {
                 e.preventDefault(); // Impede o comportamento padrão do link
 
                 // document.querySelector('.navigation').style.visibility = 'visible';

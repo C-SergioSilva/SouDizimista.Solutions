@@ -16,6 +16,7 @@ namespace SouDizimista.Repository.Repositories
         {
             var query = @" select 
                            [Id]
+                          ,[UrlModulo]
                           ,[Controller]
                           ,[Action]
                           ,[Icon]
@@ -23,7 +24,7 @@ namespace SouDizimista.Repository.Repositories
                           ,[CreateAt]
                           ,[Deleted]
                            from ModuloMenu 
-                           Where Controller = @items";
+                           Where UrlModulo = @items";
             var returnQuery = context.MenuItems.FromSqlRaw(query, new SqlParameter("@items", items)).ToList();
             return returnQuery;
         }
