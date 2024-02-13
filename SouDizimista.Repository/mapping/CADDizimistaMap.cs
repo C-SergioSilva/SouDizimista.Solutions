@@ -4,11 +4,11 @@ using SouDizimista.Domain.Entities;
 
 namespace SouDizimista.Repository.mapping
 {
-    public class CapelaMap : IEntityTypeConfiguration<Capela>
+    public class CADDizimistaMap : IEntityTypeConfiguration<Dizimista>
     {
-        public void Configure(EntityTypeBuilder<Capela> builder)
+        public void Configure(EntityTypeBuilder<Dizimista> builder)
         {
-            builder.ToTable("Capela");
+            builder.ToTable("CADDizimista");
             builder.HasQueryFilter(d => !d.Deleted);
         }
     }

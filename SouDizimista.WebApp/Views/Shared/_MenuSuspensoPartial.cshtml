@@ -1,0 +1,40 @@
+﻿@model IEnumerable<SouDizimista.Services.ServicesEntity.ServiceMenuSuspenso>
+
+
+@foreach (var menuItem in Model)
+{
+    <li class="list @(ViewContext.RouteData.Values["controller"]?.ToString() == menuItem.URLFuncionalidade && ViewContext.RouteData.Values["action"]?.ToString() == "GetMenuItems" ? "active" : "")">
+        <a class="obterDados item-menu-suspenso" data-module="@menuItem.URLFuncionalidade">
+            <span class="title">@menuItem.NomeFuncionalidade</span>
+        </a>
+    </li>
+}
+
+<script>
+    $(document).ready(function () {
+
+        // Capturar o clique nos links dos módulos
+        $('.obterDados').click(function () {
+
+            var moduleName = $(this).data('module'); // Obtém o nome do módulo do atributo "data-module"
+            // Carrega os itens de menu correspondentes ao módulo selecionado
+            loadMenuItems(moduleName);
+        });
+
+        // Função para carregar os itens de menu
+        function loadMenuItems(moduleName) {
+            $.ajax({
+                url: '/Menu/GetMenuItems', // Rota para a ação que obtém os itens de menu
+                type: 'POST',
+                data: { module: moduleName },
+                success: function (response) {
+                    // Atualizar o menu lateral com os itens de menu obtidos
+                    $('.navigation ul').html(response);
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+        }
+    });
+</script>

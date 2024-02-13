@@ -31,7 +31,7 @@ namespace SouDizimista.Repository.Repositories
                       edc.Estado,
                       edc.Municipio
                       from Dizimista as diz
-                      join Endereco edc on edc.Id = diz.EnderecoId
+                      join CADEndereco edc on edc.Id = diz.EnderecoId
                       where diz.Id = @id"; // Usamos o parâmetro @id na consulta
 
             var resultado = context.Dizimistas.FromSqlRaw(sql, new SqlParameter("@id", id)).ToList();

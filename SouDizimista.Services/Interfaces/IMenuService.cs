@@ -10,5 +10,6 @@ namespace SouDizimista.Services.Interfaces
     public interface IMenuService
     {
         List<ServiceMenuItem> GetMenuItems(string module);
+        List<ServiceMenuSuspenso> GetMenuSuspenso(); 
     }
 }

@@ -12,7 +12,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SouDizimista.Domain\SouDizimista.Domain.csproj" />
-    <ProjectReference Include="..\SouDizimista.Repository\SouDizimista.Repository.csproj" />
   </ItemGroup>
 
   <ItemGroup>

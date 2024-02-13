@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SouDizimista.Domain.Entities
 {
-    public class MenuItem : EntityGuid
+    public class MenuItemLateral : EntityGuid
     {
         public string Controller { get; set; }
         public string Action { get; set; }

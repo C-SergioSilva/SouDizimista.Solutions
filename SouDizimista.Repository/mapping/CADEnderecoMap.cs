@@ -1,5 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using SouDizimista.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -9,12 +9,18 @@ using System.Threading.Tasks;
 
 namespace SouDizimista.Repository.mapping
 {
-    public class UsuarioMap : IEntityTypeConfiguration<Usuario>
+    public class CADEnderecoMap : IEntityTypeConfiguration<Endereco> 
     {
-        public void Configure(EntityTypeBuilder<Usuario> builder)
+        public void Configure(EntityTypeBuilder<Endereco> builder)
         {
-            builder.ToTable("Usuario");
+            builder.ToTable("CADEndereco");
             builder.HasQueryFilter(e => !e.Deleted);
         }
     }
 }
+
+
+
+
+
+

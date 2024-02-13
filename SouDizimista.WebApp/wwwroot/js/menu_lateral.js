@@ -1,29 +1,4 @@
-﻿//$(document).ready(function (e) {
-
-//    e.preventDefault(); 
-//    var moduleName = $(this).data('module');
-
-//    $(".obterDados").click(function () {
-
-//        $.ajax({
-//            url: "/Home/Cadastro",
-//            type: "POST",
-//            dataType: "html",
-//            success: function (data) {
-//                $('#navigator').html(data);
-//            },
-//            erro: function (error) {
-
-//            }
-//        });
-
-//    });
-//});
-
-
-
-
-var list = document.querySelectorAll('.list');
+﻿var list = document.querySelectorAll('.list');
 
 function ActiveLink() {
     list.forEach((item) =>
@@ -40,7 +15,7 @@ let menuList = document.querySelectorAll('#modulo-menu');
 
 
 menuList.forEach((item) =>
-    item.addEventListener('click', showMenuLateral)    
+    item.addEventListener('click', showMenuLateral)
 );
 
 function showMenuLateral() {

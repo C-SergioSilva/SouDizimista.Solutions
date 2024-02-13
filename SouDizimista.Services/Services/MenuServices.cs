@@ -19,6 +19,13 @@ namespace SouDizimista.Services.Services
             this.menuModuloRepository = menuModuloRepository;
             this.mapper = mapper;
         }
+
+        public List<ServiceMenuSuspenso> GetMenuSuspenso()
+        {
+            var itemsMenu = menuModuloRepository.GetMenuSuspenso();
+            var itemsMeunuSuspenso = mapper.Map<List<ServiceMenuSuspenso>>(itemsMenu); 
+            return itemsMeunuSuspenso;
+        }
         public List<ServiceMenuItem> GetMenuItems(string module)
         {
             try

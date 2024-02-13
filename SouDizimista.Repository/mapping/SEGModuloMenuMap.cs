@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace SouDizimista.Repository.mapping
 {
-    public class ModuloMenuMap : IEntityTypeConfiguration<MenuItem>
+    public class SEGModuloMenuMap : IEntityTypeConfiguration<MenuItemLateral> 
     {
-        public void Configure(EntityTypeBuilder<MenuItem> builder)
+        public void Configure(EntityTypeBuilder<MenuItemLateral> builder)
         {
-            builder.ToTable("ModuloMenu");
+            builder.ToTable("SEGModuloMenuMap");
             builder.HasQueryFilter(d => !d.Deleted);
         }
     }

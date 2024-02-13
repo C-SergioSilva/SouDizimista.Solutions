@@ -10,7 +10,10 @@
     <link rel="stylesheet" href="~/styles/main-content.css" />
     <link rel="stylesheet" href="~/styles/NossosDizimista.css" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-
+    <link href="~/lib/bootstrap-icons/font/bootstrap-icons.css" />
+    <link href="~/lib/bootstrap-icons/font/fonts/bootstrap-icons.woff" />
+    <link href="~/lib/bootstrap-icons/font/fonts/bootstrap-icons.woff2" />
+    <link href="~/lib/bootstrap-icons/font/bootstrap-icons.min.css" />
 </head>
 <body>
     <header>
@@ -32,23 +35,11 @@
 
                 <div class="modulos">
                     
-                    <img class="modulos" id="icone-suspenso" src="~/icones/menu.png" />
-                    
-                    <nav class="menu-nav">
-                        <ul>
-                            <li>
-                                <a data-module="Cadastro" class="obterDados">Cadastro</a>
-                            </li>
+                    @* <i class="bi bi-list" id="icone-suspenso"></i> *@
+                    <img id="icone-suspenso"  src="/icones/menu.png">
 
-                             <li>
-                                <a data-module="Administrativo">Adminstrativo</a>
-                            </li>
-
-                            <li>
-                                <a data-module="Financeiro">Financeiro</a>
-                            </li>
-
-                        </ul>
+                    <nav class="menu-nav menu-suspenso-navigation">
+                       <ul></ul>
                     </nav>
                 </div>
             </div>
@@ -58,11 +49,7 @@
         <aside id="navigator" class="navigation">
             <section>
                 <h1 class="funcionalidade"> Funcionalidades </h1>
-                <ul>
-
-                </ul>
-                
-
+                <ul></ul>              
             </section>
         </aside>
     </header>
@@ -85,46 +72,10 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="~/js/menu_lateral.js"></script>
+    <script src="~/js/menu-suspenso.js"></script>
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg .com/ionicons@5.5.2/dist/ionicons/ionicons.js"> </script>
-
-    <script>
-        $(document).ready(function () {
-
-            $('#icone-suspenso').click(function () {
-                document.querySelector('.menu-nav').style.display = 'block';
-            });
-
-            // Capturar o clique nos links dos módulos
-            $('.obterDados').click(function (e) {
-                e.preventDefault(); // Impede o comportamento padrão do link
-
-                // document.querySelector('.navigation').style.visibility = 'visible';
-
-                var moduleName = $(this).data('module'); // Obtém o nome do módulo do atributo "data-module"
-                
-                // Carrega os itens de menu correspondentes ao módulo selecionado
-                loadMenuItems(moduleName);
-            });
-
-            // Função para carregar os itens de menu
-            function loadMenuItems(moduleName) {
-                $.ajax({
-                    url: '/Menu/GetMenuItems', // Rota para a ação que obtém os itens de menu
-                    type: 'POST',
-                    data: { module: moduleName },
-                    success: function(response) {
-                        // Atualizar o menu lateral com os itens de menu obtidos
-                        $('.navigation ul').html(response);
-                    },
-                    error: function(error) {
-                        console.log(error);
-                    }
-                });
-            }
-        });
-    </script>
 
 
     @await RenderSectionAsync("Scripts", required: false)

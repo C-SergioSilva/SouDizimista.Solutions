@@ -11,7 +11,8 @@ namespace SouDizimista.Repository.ContextDB
         public DbSet<Capela> Capelas { get; set; }
         public DbSet<Endereco> Enderecos { get; set; } 
         public DbSet<Usuario> Usuarios { get; set; }   
-        public DbSet<MenuItem> MenuItems { get; set; } 
+        public DbSet<MenuItemLateral> MenuItemLateral { get; set; }
+        public DbSet<MenuSuspenso> MenuSuspenso { get; set; } 
         public Context(DbContextOptions options) : base(options) { }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

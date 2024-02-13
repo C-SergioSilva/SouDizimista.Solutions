@@ -7,8 +7,11 @@ using System.Threading.Tasks;
 
 namespace SouDizimista.Domain.Interfaces
 {
-    public interface IMenuModuloRepository : IRepositoryBase<MenuItem>
+    public interface IMenuModuloRepository : IRepositoryBase<MenuItemLateral>
     {
-       List<MenuItem> GetMenuItems(string items);
+       List<MenuItemLateral> GetMenuItems(string items);
+
+       List<MenuSuspenso> GetMenuSuspenso(); 
+        
     }
 }

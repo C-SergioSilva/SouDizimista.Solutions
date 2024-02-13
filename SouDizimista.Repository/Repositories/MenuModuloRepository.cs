@@ -8,11 +8,11 @@ using System.Linq;
 
 namespace SouDizimista.Repository.Repositories
 {
-    public class MenuModuloRepository : RepositoryBase<MenuItem>, IMenuModuloRepository
+    public class MenuModuloRepository : RepositoryBase<MenuItemLateral>, IMenuModuloRepository
     {
         public MenuModuloRepository(Context context) : base(context){}
 
-        public List<MenuItem> GetMenuItems(string items)
+        public List<MenuItemLateral> GetMenuItems(string items)
         {
             var query = @" select 
                            [Id]
@@ -23,9 +23,26 @@ namespace SouDizimista.Repository.Repositories
                           ,[Title]
                           ,[CreateAt]
                           ,[Deleted]
-                           from ModuloMenu 
+                           from SEGModuloMenu 
                            Where UrlModulo = @items";
-            var returnQuery = context.MenuItems.FromSqlRaw(query, new SqlParameter("@items", items)).ToList();
+            var returnQuery = context.MenuItemLateral.FromSqlRaw(query, new SqlParameter("@items", items)).ToList();
+            return returnQuery;
+        }
+
+        public List<MenuSuspenso> GetMenuSuspenso()  
+        {
+            var query = @"select
+                           Id
+                          ,NumeroFuncionalidade
+                          ,[NomeFuncionalidade]
+                          ,IDFuncionalidadePai
+                          ,NumeroOrdenacaoFuncionalidade
+                          ,[URLFuncionalidade]
+                          ,[IndicadorAtivo]
+                          ,[CreateAt]
+                          ,[Deleted]
+                           from SEGFuncionalidade where [IndicadorAtivo] = 1"; 
+            var returnQuery = context.MenuSuspenso.FromSqlRaw(query).ToList();
             return returnQuery;
         }
     }
