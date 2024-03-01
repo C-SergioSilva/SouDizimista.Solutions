@@ -117,13 +117,15 @@ header {
 
 .funcionalidade {
     display: flex;
-    padding:20px 0px 0px 10px;
-    font-size:16px;
+    padding: 20px 0px 0px 10px;
+    font-size: 20px;
+    color: #395050;
+    font-weight: bold;
 }
 
 .list {
     color: #fff;
-    font-size: 13px;
+    font-size: 14px;
     padding-left: 18px;
     margin-bottom:8px;
     margin-top:10px;
@@ -133,10 +135,17 @@ header {
     color:#fff !important;
 }
 
+.list a:hover{
+    color:#396060 !important;
+     text-decoration: none;
+}
+
 .titulo-menu {
     margin-top: 20px;
     padding-left: 18px;
-    margin-bottom:0px; 
+    margin-bottom:0px;
+    font-weight:700;
+    color:#395050;
 }
 
 

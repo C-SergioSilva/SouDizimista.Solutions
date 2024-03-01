@@ -30,6 +30,7 @@
                 success: function (response) {
                     // Atualizar o menu lateral com os itens de menu obtidos
                     $('.navigation ul').html(response);
+                    document.querySelector('.menu-nav').style.display = 'none';
                 },
                 error: function (error) {
                     console.log(error);

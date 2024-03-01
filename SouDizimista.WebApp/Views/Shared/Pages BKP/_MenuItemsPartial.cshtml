@@ -27,9 +27,19 @@
     }
 
     <li class="list @(ViewContext.RouteData.Values["controller"]?.ToString() == menuItem.Controller && ViewContext.RouteData.Values["action"]?.ToString() == menuItem.Action ? "active" : "")">
-        <a asp-controller="@menuItem.Controller" asp-action="@menuItem.Action">
+        <a id="navigation-funcionalidade" asp-controller="@menuItem.Controller" asp-action="@menuItem.Action">
             <span class="icon"><ion-icon name="@menuItem.Icon"></ion-icon></span>
             <span class="title">@menuItem.Title</span>
         </a>
     </li>
 }
+<script>
+    $(document).ready(function () {
+
+        $('#navigation-funcionalidade').click(function () {
+            debugger;
+            document.querySelector('.nav-opcao').style.display = 'block';
+        });
+
+    });
+</script>
