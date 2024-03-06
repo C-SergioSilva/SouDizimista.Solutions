@@ -1,4 +1,49 @@
-﻿@model IEnumerable<SouDizimista.Services.ServicesEntity.ServiceDizimista>
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+<div class=" container ">
+    <div class="row">
+        <div class="col-lg-12">
+            <!--begin::Card-->
+            <div class="card card-custom">
+                <div class="card-header flex-wrap border-0 pt-6 pb-0">
+                    <h3 class="card-title">
+                        Nossos Dizimistas
+                    </h3>
+
+                    <div class="card-toolbar">
+                        <a href="@Url.Action("AddDizimista", "Dizimista")"><i class="fas fa-plus"></i> Adicionar</a>
+                    </div>
+
+                </div>
+
+                <div class="card-body">
+                    <div class="datatable datatable-bordered" id="kt_datatable" style=""></div>
+                </div>
+            </div>
+
+
+
+            <!--end::Card-->
+        </div>
+    </div>
+</div>
+@section Scripts {
+
+    <script src="~/js/Dizimista/GetAllDizimista.js"></script>
+
+}
+
+
+
+
+
+
+
+
+
+
+@* @model IEnumerable<SouDizimista.Services.ServicesEntity.ServiceDizimista>
 
 @{
     ViewData["Title"] = "Nossos Dizímistas";
@@ -46,3 +91,4 @@
         }
     </tbody>
 </table>
+ *@

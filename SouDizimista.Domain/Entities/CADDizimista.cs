@@ -3,7 +3,7 @@ using System;
 
 namespace SouDizimista.Domain.Entities
 {
-    public class Dizimista : EntityGuid
+    public class CADDizimista : EntityGuid
     {
         public string Nome { get; set; }
         public decimal ValorDevolucao { get; set; }

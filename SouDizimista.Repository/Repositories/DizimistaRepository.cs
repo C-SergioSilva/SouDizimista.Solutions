@@ -9,11 +9,11 @@ using System.Linq;
 
 namespace SouDizimista.Repository.Repositories
 {
-    public class DizimistaRepository : RepositoryBase<Dizimista>, IDizimistaRepository
+    public class DizimistaRepository : RepositoryBase<CADDizimista>, IDizimistaRepository
     {
         public DizimistaRepository(Context context) : base(context){}
 
-        public List<Dizimista> ObterInformacoesDizimistasComEndereco(Guid id)
+        public List<CADDizimista> ObterInformacoesDizimistasComEndereco(Guid id)
         {
             var sql = @"
                       select
@@ -30,9 +30,9 @@ namespace SouDizimista.Repository.Repositories
                       edc.Cep,
                       edc.Estado,
                       edc.Municipio
-                      from Dizimista as diz
-                      join Endereco edc on edc.Id = diz.EnderecoId
-                      where diz.Id = @id"; // Usamos o parâmetro @id na consulta
+                      from CADDizimista as dizimista
+                      join Endereco endereco on endereco.Id = dizimista.EnderecoId
+                      where dizimista.Id = @id"; // Usamos o parâmetro @id na consulta
 
             var resultado = context.Dizimistas.FromSqlRaw(sql, new SqlParameter("@id", id)).ToList();
             resultado.AsQueryable().Include(e => e.Endereco).FirstOrDefault(w => w.Id.Equals(id));

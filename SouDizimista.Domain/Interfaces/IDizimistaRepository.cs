@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace SouDizimista.Domain.Interfaces
 {
-    public interface IDizimistaRepository : IRepositoryBase<Dizimista>
+    public interface IDizimistaRepository : IRepositoryBase<CADDizimista>
     {
-        List<Dizimista> ObterInformacoesDizimistasComEndereco(Guid id);
+        List<CADDizimista> ObterInformacoesDizimistasComEndereco(Guid id);
     }
 }

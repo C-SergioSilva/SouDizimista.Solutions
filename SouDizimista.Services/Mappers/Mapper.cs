@@ -9,7 +9,7 @@ namespace SouDizimista.Services.Mappers
         public Mapper()
         {
             CreateMap<Paroquia, ServiceParoquia>().ReverseMap();
-            CreateMap<Dizimista, ServiceDizimista>().ReverseMap();
+            CreateMap<CADDizimista, ServiceDizimista>().ReverseMap();
             CreateMap<Capela, ServiceCapela>().ReverseMap();
             CreateMap<Endereco, ServiceEndereco>().ReverseMap();
             CreateMap<MenuItem, ServiceMenuItem>().ReverseMap();

@@ -27,7 +27,7 @@ namespace SouDizimista.Services.Services
         {
             try
             {
-                var entityDizimista = mapper.Map<Dizimista>(dizimista);
+                var entityDizimista = mapper.Map<CADDizimista>(dizimista);
                 await dizimistaRepository.AddSave(entityDizimista);
             }
             catch (Exception exception)
@@ -108,7 +108,7 @@ namespace SouDizimista.Services.Services
                 #region [Obtem O dizimista.EnderecoId é obtido na Tabela Dizimista para poder atualizar o Dizimista ]
 
                   dizimista.EnderecoId = enderecoDizimistaID.EnderecoId;
-                  var entityDizimista = mapper.Map<Dizimista>(dizimista);
+                  var entityDizimista = mapper.Map<CADDizimista>(dizimista);
                   var dtoDizimista = await dizimistaRepository.Update(entityDizimista);
                   var dizimistaDto = mapper.Map<ServiceDizimista>(dtoDizimista);
 

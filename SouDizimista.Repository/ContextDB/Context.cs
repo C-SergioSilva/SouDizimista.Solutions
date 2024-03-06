@@ -7,7 +7,7 @@ namespace SouDizimista.Repository.ContextDB
     public class Context : DbContext
     {
         public DbSet<Paroquia> Paroquias { get; set; }
-        public DbSet<Dizimista> Dizimistas { get; set; }
+        public DbSet<CADDizimista> Dizimistas { get; set; }
         public DbSet<Capela> Capelas { get; set; }
         public DbSet<Endereco> Enderecos { get; set; } 
         public DbSet<Usuario> Usuarios { get; set; }   
